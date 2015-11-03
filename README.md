@@ -17,20 +17,19 @@ CpxProfiles.py / CpxProfiles5.png
 CpxProfiles.py / CpxProfiles_bulkH_WB.png
 
 ## FTIR details and filenames
-Figure 1D  
+### Figure 1D  
 Sum of Kunlun diopside with polarized IR
 electric vector E || a, E || b, and E || c 
 Spectra listed below under Figures 2 and 3
 
-Figure, 1E, 2D-F, 3D-F  
+### Figure, 1E, 2D-F, 3D-F  
 Jaipur diopside polarized spectra reported by Woods et al. 2000
-Digitized using CurveSnap: http://curvesnap.en.softonic.com/
-To sample thickness 0.8e6 microns  
+Digitized using [CurveSnap](http://curvesnap.en.softonic.com/) to sample thickness 0.8e6 microns  
 J_Ea  
 J_Eb  
 J_Ec  
 
-Figure 1F, 2G-I, 3G-I  
+### Figure 1F, 2G-I, 3G-I  
 Augite PMR-53 polarized spectra reported by Bell et al. 1995
 Digitized using [CurveSnap](http://curvesnap.en.softonic.com/) to sample thickness 1e4 microns  
 PMR_Ea  
@@ -38,7 +37,7 @@ PMR_Eb
 PMR_Ec  
 Spectra are also available through [PULI](http://puli.mfgi.hu/)
 
-Kunlun diopside E || a  
+### Kunlun diopside E || a  
 Figures 2A and 3A, part of Figure 1D  
 average of:  
 K6_db_Ea
@@ -46,68 +45,69 @@ K6_db_Ea_2
 K6_dc_Ea
 K6_dc_Ea_2
 
-Kunlun diopside E || b  
+### Kunlun diopside E || b  
 Figure 2B and 3B, part of Figure 1D  
 average of:  
 K6_dc_Eb  
 K6_dc_Eb_2
 
-Kunlun diopside E || c  
+### Kunlun diopside E || c  
 Figure 2C and 3C, part of Figure 1D  
 K6_db_Ec_2
 
-Figure 4  
+### Figure 4  
 Spectra listed in order before and after
 
-Figure 4A  
+#### Figure 4A  
 K4_cdbIright  
 K4q_cdb03
 
-Figure 4B  
+#### Figure 4B  
 K3_sp3_Cdb  
 K3_cdb13
 
-Figure 4C  
+#### Figure 4C  
 K3_cdb13  
 K3h_cdb03
 
-Figure 4D  
+#### Figure 4D  
 K3_cdb13  
 K3h700_cdb03
 
-Figure 4E  
+#### Figure 4E  
 K3_cdb13  
 K3h800_cdbMID
 
-Figure 4F  
+#### Figure 4F  
 K3_cdb13
 K3g_cdb18
 
-Figure 4G  
+#### Figure 4G  
 K4q_cdb03  
 K4h_cdb16
 
-Figure 4H  
+#### Figure 4H  
 K4q_cdb03  
 K4p_cdb16
 
-Figure 4I  
+#### Figure 4I  
 K4q_cdb03  
 K4f_cdb16
 
-Figure 4J  
+#### Figure 4J  
 K5i_cdb16  
 K5_cdb16
 
-Figure 4K  
+#### Figure 4K  
 J1_dcI_R  
 J1h_adc25
 
-Figure 4L  
+#### Figure 4L  
 P_0_unpol
 P_6_unpol
 
-Figure 5A
+### Figure 5
+#### Figure 5A
 "Initial" (pre-anneal at 696 C for 2 hrs) profiles for Kunlun diopside K3  
 Profile || b  
 K3_bdc01 (x=0.09)  
@@ -121,7 +121,7 @@ K3_bdc08 (x=0.73)
 K3_bdc09 (x=0.82)  
 K3_bdc10 (x=0.91)
  
-Figure 5B  
+#### Figure 5B  
 "Initial" (pre-anneal at 696 C for 2 hrs) profiles for Kunlun diopside K3  
 Profile || c  
 K3_cdb01 (x=0.03)  
@@ -138,7 +138,7 @@ K3_cdb11 (x=0.81)
 K3_cdb12 (x=0.89)  
 K3_cdb13 (x=0.97)
 
-Figure 5C  
+#### Figure 5C  
 Kunlun diopside K3 heated at 817 C for 6 days  
 Profile || a  
 K3g_adb01 (x=0.03)  
@@ -150,7 +150,7 @@ K3g_adb15 (x=0.73)
 K3g_adb19 (x=0.92)  
 K3g_adb20 (x=0.97)  
  
-Figure 5D  
+#### Figure 5D  
 Kunlun diopside K3 heated at 817 C for 6 days  
 Profile || b  
 K3g_bdc01 (x=0.78)  
@@ -159,7 +159,7 @@ K3g_bdc06 (x=0.37)
 K3g_bdc10 (x=0.10)  
 K3g_bdc12 (x=0.03)
 
-Figure 5E  
+#### Figure 5E  
 Kunlun diopside K3 heated at 817 C for 6 days  
 Profile || c  
 K3g_cdb01 (x=0.03)  
@@ -174,7 +174,7 @@ K3g_cdb14 (x=0.75)
 K3g_cdb17 (x=0.92)  
 K3g_cdb18 (x=0.97)  
 
-Figure 5F  
+#### Figure 5F  
 Kunlun diopside K4 heated at 904 C for 154 hours  
 Profile || a  
 K4f_adc01 (x=0.01)  
@@ -196,7 +196,7 @@ K4f_adc61 (x=0.87)
 K4f_adc67 (x=0.96)  
 K4f_adc68 (x=0.97)  
  
-Figure 5G  
+#### Figure 5G  
 Kunlun diopside K4 heated at 904 C for 154 hours  
 Profile || b  
 K4f_bdc01 (x=0.05)  
