@@ -89,16 +89,20 @@ ax[3].set_ylabel('absorbance (cm$^{-1}$)\n' +
 ax[6].set_ylabel('augite PMR-53 / %i\n%s ppm H$_2$O' % 
                   (PMRfac, numformat.format(PMR_water)))
 
-savefile = sp.default_savefolder + 'KJP_3x3_baselines'
-plt.savefig(savefile, dpi=savedpi)
+#savefile = sp.default_savefolder + 'KJP_3x3_baselines'
+#plt.savefig(savefile, dpi=savedpi)
 
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2', dpi=300)
+plt.savefig('Fig2.eps', format='eps', dpi=1000)
 # %% Figure showing baseline-subtracted spectra and fit peaks
 ax = nams.plotsetup_3x3(xhi=high, xlo=low, xtickgrid=200, yhi=1.5)
 
 peakpos_diopside = [3645, 3617, 3540, 3460, 3350]
 peakpos_augite = [3620, 3550, 3460, 3355]
 shrinker = 0.1 # for squeezing in legend at the bottom
-PMRfac = 6
+PMRfac = 6 # Divide PMR spectra
 
 for k in range(9):
     bdata = spec_list[k].get_3baselines()   
@@ -115,12 +119,13 @@ for k in range(9):
 
     ax[k].plot(bdata[:,0], y, **styles.style_spectrum)
     ax[k].plot(bdata[:,0], ysum, **styles.style_summed)
+
     for x in range(len(gaussian)):
         if k > 5:
             ax[k].plot(bdata[:,0], gaussian[x]/PMRfac, **styles.style_fitpeak)
         else:            
             ax[k].plot(bdata[:,0], gaussian[x], **styles.style_fitpeak)
-#            
+            
     # label ray path
     ax[k].text(3230, 1.2, elabels[k], horizontalalignment='right',
                 backgroundcolor='w', fontsize=11)
@@ -131,8 +136,18 @@ for k in range(9):
         idx = (np.abs(bdata[:,0]-peakwn)).argmin()
         ypeak = y[idx]
         xpeak = peakwn
-        ax[k].text(xpeak, ypeak, ''.join(('$\leftarrow$', str(peakwn))), 
-                    rotation=90, ha='center', va='bottom', fontsize=8)
+        if peakwn == 3617:
+            xtext = 3600
+        else:
+            xtext = xpeak
+        ax[k].annotate(str(peakwn), xy=(xpeak, ypeak), 
+                       xytext=(xtext, ypeak+0.2), fontsize=8,
+                        rotation=90, ha='center', va='bottom',
+                        arrowprops=dict(facecolor='black', arrowstyle='->',
+                                        linewidth=1))
+
+#        ax[k].text(xpeak, ypeak, ''.join(('$\leftarrow$', str(peakwn))), 
+#                    rotation=90, ha='center', va='bottom', fontsize=8)
 
     # Shrink to make room for legend at the bottom
     box = ax[k].get_position()
@@ -160,9 +175,13 @@ main_legend = plt.legend(handles=leg_handles, ncol=3,
                           bbox_transform=ax[6].transData, 
                           frameon=True)
 
-savefile = sp.default_savefolder + 'KJP_3x3_peakfit'
-plt.savefig(savefile, dpi=savedpi)
+#savefile = sp.default_savefolder + 'KJP_3x3_peakfit'
+#plt.savefig(savefile, dpi=savedpi)
 
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3', dpi=300)
+#plt.savefig('Fig3.eps', format='eps', dpi=1000)
 # %% Now sum up the peaks for each one
 
 ax = nams.plotsetup_3stacked(yhi=2, ytickgrid=0.5)
