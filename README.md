@@ -2,8 +2,6 @@ FTIR spectra, illustrator files, and python code for a project measuring hydroge
 The accompanying academic journal article is in preparation now 
 and will be submitted to *Contributions in Mineralogy and Petrology*.
 
-Here are the filenames and spectra associated with each figure.
-
 Figure 1  
 Inkscape file cpx_SampleCharacterization.svg  
 Python code for D-F: KJP_3x3_comparison.py
@@ -23,192 +21,191 @@ J_Ec
 
 Figure 1F, 2G-I, 3G-I  
 Augite PMR-53 polarized spectra reported by Bell et al. 1995
-Digitized using [CurveSnap](http://curvesnap.en.softonic.com/)
-To sample thickness 1e4 microns  
+Digitized using [CurveSnap](http://curvesnap.en.softonic.com/) to sample thickness 1e4 microns  
 PMR_Ea  
 PMR_Eb  
 PMR_Ec  
 Spectra are also available through [PULI](http://puli.mfgi.hu/)
 
-Kunlun diopside E || a
-Figures 2A and 3A, part of Figure 1D
-average of:
+Kunlun diopside E || a  
+Figures 2A and 3A, part of Figure 1D  
+average of:  
 K6_db_Ea
 K6_db_Ea_2
 K6_dc_Ea
 K6_dc_Ea_2
 
-Kunlun diopside E || b
-Figure 2B and 3B, part of Figure 1D
-average of:
-K6_dc_Eb
+Kunlun diopside E || b  
+Figure 2B and 3B, part of Figure 1D  
+average of:  
+K6_dc_Eb  
 K6_dc_Eb_2
 
-Kunlun diopside E || c
-Figure 2C and 3C, part of Figure 1D
+Kunlun diopside E || c  
+Figure 2C and 3C, part of Figure 1D  
 K6_db_Ec_2
 
-Figure 4
+Figure 4  
 Spectra listed in order before and after
 
-Figure 4A
-K4_cdbIright
+Figure 4A  
+K4_cdbIright  
 K4q_cdb03
 
-Figure 4B
-K3_sp3_Cdb
+Figure 4B  
+K3_sp3_Cdb  
 K3_cdb13
 
-Figure 4C
-K3_cdb13
+Figure 4C  
+K3_cdb13  
 K3h_cdb03
 
-Figure 4D
-K3_cdb13
+Figure 4D  
+K3_cdb13  
 K3h700_cdb03
 
-Figure 4E
-K3_cdb13
+Figure 4E  
+K3_cdb13  
 K3h800_cdbMID
 
-Figure 4F
+Figure 4F  
 K3_cdb13
 K3g_cdb18
 
-Figure 4G
-K4q_cdb03
+Figure 4G  
+K4q_cdb03  
 K4h_cdb16
 
-Figure 4H
-K4q_cdb03
+Figure 4H  
+K4q_cdb03  
 K4p_cdb16
 
-Figure 4I
-K4q_cdb03
+Figure 4I  
+K4q_cdb03  
 K4f_cdb16
 
-Figure 4J
-K5i_cdb16
+Figure 4J  
+K5i_cdb16  
 K5_cdb16
 
-Figure 4K
-J1_dcI_R
+Figure 4K  
+J1_dcI_R  
 J1h_adc25
 
-Figure 4L
+Figure 4L  
 P_0_unpol
 P_6_unpol
 
 Figure 5A
-"Initial" (pre-anneal at 696 C for 2 hrs) profiles for Kunlun diopside K3
-Profile || b
-K3_bdc01 (x=0.09)
-K3_bdc02 (x=0.18)
-K3_bdc03 (x=0.27)
-K3_bdc04 (x=0.36)
-K3_bdc05 (x=0.45)
-K3_bdc06 (x=0.55)
-K3_bdc07 (x=0.64)
-K3_bdc08 (x=0.73)
-K3_bdc09 (x=0.82)
+"Initial" (pre-anneal at 696 C for 2 hrs) profiles for Kunlun diopside K3  
+Profile || b  
+K3_bdc01 (x=0.09)  
+K3_bdc02 (x=0.18)  
+K3_bdc03 (x=0.27)  
+K3_bdc04 (x=0.36)  
+K3_bdc05 (x=0.45)  
+K3_bdc06 (x=0.55)  
+K3_bdc07 (x=0.64)  
+K3_bdc08 (x=0.73)  
+K3_bdc09 (x=0.82)  
 K3_bdc10 (x=0.91)
  
-Figure 5B
-"Initial" (pre-anneal at 696 C for 2 hrs) profiles for Kunlun diopside K3
-Profile || c
-K3_cdb01 (x=0.03)
-K3_cdb02 (x=0.11)
-K3_cdb03 (x=0.19)
-K3_cdb04 (x=0.26)
-K3_cdb05 (x=0.34)
+Figure 5B  
+"Initial" (pre-anneal at 696 C for 2 hrs) profiles for Kunlun diopside K3  
+Profile || c  
+K3_cdb01 (x=0.03)  
+K3_cdb02 (x=0.11)  
+K3_cdb03 (x=0.19)  
+K3_cdb04 (x=0.26)  
+K3_cdb05 (x=0.34)  
 K3_cdb06 (x=0.42)
 K3_cdb07 (x=0.50)
-K3_cdb08 (x=0.58)
-K3_cdb09 (x=0.66)
-K3_cdb10 (x=0.74)
-K3_cdb11 (x=0.81)
-K3_cdb12 (x=0.89)
+K3_cdb08 (x=0.58)  
+K3_cdb09 (x=0.66)  
+K3_cdb10 (x=0.74)  
+K3_cdb11 (x=0.81)  
+K3_cdb12 (x=0.89)  
 K3_cdb13 (x=0.97)
 
-Figure 5C
-Kunlun diopside K3 heated at 817 C for 6 days
-Profile || a
-K3g_adb01 (x=0.03)
-K3g_adb02 (x=0.08)
-K3g_adb05 (x=0.23)
-K3g_adb07 (x=0.33)
+Figure 5C  
+Kunlun diopside K3 heated at 817 C for 6 days  
+Profile || a  
+K3g_adb01 (x=0.03)  
+K3g_adb02 (x=0.08)  
+K3g_adb05 (x=0.23)  
+K3g_adb07 (x=0.33)  
 K3g_adb10 (x=0.48)
-K3g_adb15 (x=0.73)
-K3g_adb19 (x=0.92)
-K3g_adb20 (x=0.97)
+K3g_adb15 (x=0.73)  
+K3g_adb19 (x=0.92)  
+K3g_adb20 (x=0.97)  
  
-Figure 5D
-Kunlun diopside K3 heated at 817 C for 6 days
-Profile || b
-K3g_bdc01 (x=0.78)
-K3g_bdc02 (x=0.64)
-K3g_bdc06 (x=0.37)
-K3g_bdc10 (x=0.10)
+Figure 5D  
+Kunlun diopside K3 heated at 817 C for 6 days  
+Profile || b  
+K3g_bdc01 (x=0.78)  
+K3g_bdc02 (x=0.64)  
+K3g_bdc06 (x=0.37)  
+K3g_bdc10 (x=0.10)  
 K3g_bdc12 (x=0.03)
 
-Figure 5E
-Kunlun diopside K3 heated at 817 C for 6 days
-Profile || c 
-K3g_cdb01 (x=0.03)
-K3g_cdb02 (x=0.08)
-K3g_cdb03 (x=0.14)
-K3g_cdb05 (x=0.25)
-K3g_cdb06 (x=0.31)
-K3g_cdb08 (x=0.42)
-K3g_adb10 (x=0.53)
-K3g_cdb12 (x=0.64)
-K3g_cdb14 (x=0.75)
-K3g_cdb17 (x=0.92)
-K3g_cdb18 (x=0.97)
+Figure 5E  
+Kunlun diopside K3 heated at 817 C for 6 days  
+Profile || c  
+K3g_cdb01 (x=0.03)  
+K3g_cdb02 (x=0.08)  
+K3g_cdb03 (x=0.14)  
+K3g_cdb05 (x=0.25)  
+K3g_cdb06 (x=0.31)  
+K3g_cdb08 (x=0.42)  
+K3g_adb10 (x=0.53)  
+K3g_cdb12 (x=0.64)  
+K3g_cdb14 (x=0.75)  
+K3g_cdb17 (x=0.92)  
+K3g_cdb18 (x=0.97)  
 
-Figure 5F 
-Kunlun diopside K4 heated at 904 C for 154 hours
-Profile || a
-K4f_adc01 (x=0.01)
-K4f_adc02 (x=0.03)
-K4f_adc04 (x=0.06)
-K4f_adc06 (x=0.09)
-K4f_adc08 (x=0.11)
-K4f_adc11 (x=0.16)
-K4f_adc14 (x=0.20)
-K4f_adc18 (x=0.26)
-K4f_adc22 (x=0.31)
-K4f_adc25 (x=0.36)
-K4f_adc29 (x=0.41)
-K4f_adc35 (x=0.50)
-K4f_adc42 (x=0.60)
-K4f_adc49 (x=0.70)
-K4f_adc56 (x=0.80)
-K4f_adc61 (x=0.87)
-K4f_adc67 (x=0.96)
-K4f_adc68 (x=0.97)
+Figure 5F  
+Kunlun diopside K4 heated at 904 C for 154 hours  
+Profile || a  
+K4f_adc01 (x=0.01)  
+K4f_adc02 (x=0.03)  
+K4f_adc04 (x=0.06)  
+K4f_adc06 (x=0.09)  
+K4f_adc08 (x=0.11)  
+K4f_adc11 (x=0.16)  
+K4f_adc14 (x=0.20)  
+K4f_adc18 (x=0.26)  
+K4f_adc22 (x=0.31)  
+K4f_adc25 (x=0.36)  
+K4f_adc29 (x=0.41)  
+K4f_adc35 (x=0.50)  
+K4f_adc42 (x=0.60)  
+K4f_adc49 (x=0.70)  
+K4f_adc56 (x=0.80)  
+K4f_adc61 (x=0.87)  
+K4f_adc67 (x=0.96)  
+K4f_adc68 (x=0.97)  
  
-Figure 5G
-Kunlun diopside K4 heated at 904 C for 154 hours
-Profile || b
-K4f_bdc01 (x=0.05)
-K4f_bdc02 (x=0.09)
-K4f_bdc03 (x=0.14)
-K4f_bdc04 (x=0.18)
-K4f_bdc05 (x=0.14)
-K4f_bdc06 (x=0.27)
-K4f_bdc07 (x=0.32)
-K4f_bdc08 (x=0.37)
-K4f_bdc09 (x=0.41)
-K4f_bdc10 (x=0.46)
-K4f_adc35 (x=0.55)
-K4f_bdc15 (x=0.69)
-K4f_bdc17 (x=0.78)
-K4f_bdc19 (x=0.87)
-K4f_bdc21 (x=0.93)
-K4f_bdc22 (x=0.98)
+Figure 5G  
+Kunlun diopside K4 heated at 904 C for 154 hours  
+Profile || b  
+K4f_bdc01 (x=0.05)  
+K4f_bdc02 (x=0.09)  
+K4f_bdc03 (x=0.14)  
+K4f_bdc04 (x=0.18)  
+K4f_bdc05 (x=0.14)  
+K4f_bdc06 (x=0.27)  
+K4f_bdc07 (x=0.32)  
+K4f_bdc08 (x=0.37)  
+K4f_bdc09 (x=0.41)  
+K4f_bdc10 (x=0.46)  
+K4f_adc35 (x=0.55)  
+K4f_bdc15 (x=0.69)  
+K4f_bdc17 (x=0.78)  
+K4f_bdc19 (x=0.87)  
+K4f_bdc21 (x=0.93)  
+K4f_bdc22 (x=0.98)  
 
-HERE
+FILES AVAILABLE UP TO HERE
  
 K4f_cdb01 (x=0.03)
 K4f_cdb02 (x=0.08)
