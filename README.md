@@ -1,6 +1,6 @@
 FTIR spectra, illustrator files, and python code for a project measuring hydrogen diffusion in clinopyroxene. 
 The accompanying academic journal article is in preparation now 
-and will be submitted to __Contributions in Mineralogy and Petrology__.
+and will be submitted to *Contributions in Mineralogy and Petrology*.
 
 Here are the filenames and spectra associated with each figure.
 
@@ -8,7 +8,7 @@ Figure 1
 Inkscape file cpx_SampleCharacterization.svg  
 Python code for D-F: KJP_3x3_comparison.py
 
-Figure 1D 
+Figure 1D  
 Sum of Kunlun diopside with polarized IR
 electric vector E || a, E || b, and E || c 
 Spectra listed below under Figures 2 and 3
@@ -21,14 +21,14 @@ J_Ea
 J_Eb  
 J_Ec  
 
-Figure 1F, 2G-I, 3G-I
+Figure 1F, 2G-I, 3G-I  
 Augite PMR-53 polarized spectra reported by Bell et al. 1995
-Digitized using CurveSnap: http://curvesnap.en.softonic.com/
-To sample thickness 1e4 microns
-PMR_Ea
-PMR_Eb
-PMR_Ec
-Spectra are also available through PULI: http://puli.mfgi.hu/
+Digitized using [CurveSnap](http://curvesnap.en.softonic.com/)
+To sample thickness 1e4 microns  
+PMR_Ea  
+PMR_Eb  
+PMR_Ec  
+Spectra are also available through [PULI](http://puli.mfgi.hu/)
 
 Kunlun diopside E || a
 Figures 2A and 3A, part of Figure 1D

@@ -8,8 +8,8 @@ H diffusion in cpx project
 Create 3x3 subplots of initial polarized FTIR spectra for Kunlun, Jaipur, PMR
 """
 import my_spectra as sp
-import pynams.pynams as nams
-import pynams.styles as styles
+from pynams import pynams as nams
+from pynams import styles as styles
 import matplotlib.pyplot as plt
 import numpy as np
 from uncertainties import ufloat
