@@ -12,6 +12,9 @@ CpxResults.py
 ### Figure 5
 CpxProfiles.py / CpxProfiles5.png
 ### Figure 6
+CpxProfiles.py / Fig6
+### Figure 7
+Arrhenius_PeakSpecific.py 
 
 ### Supplemental Figure 7
 CpxProfiles.py / CpxProfiles_bulkH_WB.png
