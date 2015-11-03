@@ -1,10 +1,10 @@
 FTIR spectra, illustrator files, and python code for a project measuring hydrogen diffusion in clinopyroxene. 
-The accompanying academic journal article is in preparation now 
-and will be submitted to *Contributions in Mineralogy and Petrology*.
+The accompanying academic journal article is in preparation
+and will be submitted to *Contributions to Mineralogy and Petrology*.
 
 Figure 1  
 Inkscape file cpx_SampleCharacterization.svg  
-Python code for D-F: KJP_3x3_comparison.py
+Python code for Fig. 1 D-F, 2, and 3: KJP_3x3_comparison.py
 
 Figure 1D  
 Sum of Kunlun diopside with polarized IR
