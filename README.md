@@ -1,17 +1,18 @@
-FTIR spectra collected for a project measururing hydrogen diffusion in clinopyroxene. The accompanying academic journal article is in preparation now.
+FTIR spectra collected for a project measuring hydrogen diffusion in clinopyroxene. 
+The accompanying academic journal article is in preparation now.
 
-Figure 1D
+Figure 1D  
 Sum of Kunlun diopside with polarized IR
 electric vector E || a, E || b, and E || c 
 Spectra listed below under Figures 2 and 3
 
-Figure, 1E, 2D-F, 3D-F
+Figure, 1E, 2D-F, 3D-F  
 Jaipur diopside polarized spectra reported by Woods et al. 2000
 Digitized using CurveSnap: http://curvesnap.en.softonic.com/
-To sample thickness 0.8e6 microns
-J_Ea
-J_Eb
-J_Ec
+To sample thickness 0.8e6 microns  
+J_Ea  
+J_Eb  
+J_Ec  
 
 Figure 1F, 2G-I, 3G-I
 Augite PMR-53 polarized spectra reported by Bell et al. 1995
