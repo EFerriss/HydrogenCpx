@@ -15,6 +15,12 @@ CpxProfiles.py / CpxProfiles5.png
 CpxProfiles.py / Fig6
 ### Figure 7
 Arrhenius_PeakSpecific.py 
+### Figure 8
+ArrheniusPeaks.py
+### Figure 9
+Sundvall_SomeFe.py  
+PMR.py  
+PMR_unpol_movie.m
 
 ### Supplemental Figure 7
 CpxProfiles.py / CpxProfiles_bulkH_WB.png
