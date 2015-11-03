@@ -2,11 +2,19 @@ FTIR spectra, baselines, peakfits, figure files, and python code for a project m
 and will be submitted to *Contributions to Mineralogy and Petrology*.
 
 ## Python code for generating figures
+Sample information and profile spectra are setup in my_spectra.py
+
 ### Figures 1, 2, 3
 KJP_3x3_comparison.py  
 cpx_SampleCharacterization.svg  
 ### Figure 4
 CpxResults.py
+### Figure 5
+CpxProfiles.py / CpxProfiles5.png
+### Figure 6
+
+### Supplemental Figure 7
+CpxProfiles.py / CpxProfiles_bulkH_WB.png
 
 ## FTIR details and filenames
 Figure 1D  
