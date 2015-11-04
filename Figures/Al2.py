@@ -111,8 +111,8 @@ fbox = mpatches.FancyBboxPatch([xenoMin, xenoDmin], xenoMax-xenoMin, xenoDrange,
                                fill=True, alpha=0.25, color='r')
 #                               label='peridodite mantle cpx?')
 ax.add_patch(fbox)
-ax.text((xenoMax + xenoMin)/2., xenoDmin + 0.5*xenoDrange, 
-        'peridotite\nmantle\ncpx?', ha='center', va='center')
+ax.text(xenoMax, xenoDmin, 
+        'peridotite\nmantle\ncpx?', ha='right', va='bottom')
 
 
 ### Fuego
