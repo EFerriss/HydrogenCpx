@@ -1,5 +1,4 @@
-FTIR spectra, baselines, peakfits, figure files, and python code for a project measuring hydrogen diffusion in clinopyroxene. The accompanying academic journal article is in preparation
-and will be submitted to *Contributions to Mineralogy and Petrology*.
+FTIR spectra, baselines, peakfits, and python code for a project measuring hydrogen diffusion in clinopyroxene. The accompanying academic journal article is in preparation and will be submitted to *Contributions to Mineralogy and Petrology*.
 
 ## Python code for generating figures
 Sample information and profile spectra are setup in my_spectra.py
