@@ -21,6 +21,14 @@ ArrheniusPeaks.py
 Sundvall_SomeFe.py  
 PMR.py  
 PMR_unpol_movie.m
+### Figure 10
+Arrhenius_Cpx_Lines.py
+### Figure 12
+Al2.py
+### Figure 14
+xenolithEquilibration_*.py
+### Figure 15
+xenolithRims_*.py
 
 ### Supplemental Figure 7
 CpxProfiles.py / CpxProfiles_bulkH_WB.png
