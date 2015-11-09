@@ -100,7 +100,7 @@ K3_cdb13
 K3h800_cdbMID
 
 #### Figure 4F  
-K3_cdb13
+K3_cdb13  
 K3g_cdb18
 
 #### Figure 4G  
@@ -124,7 +124,7 @@ J1_dcI_R
 J1h_adc25
 
 #### Figure 4L  
-P_0_unpol
+P_0_unpol  
 P_6_unpol
 
 ### Figure 5
@@ -150,8 +150,8 @@ K3_cdb02 (x=0.11)
 K3_cdb03 (x=0.19)  
 K3_cdb04 (x=0.26)  
 K3_cdb05 (x=0.34)  
-K3_cdb06 (x=0.42)
-K3_cdb07 (x=0.50)
+K3_cdb06 (x=0.42)  
+K3_cdb07 (x=0.50)  
 K3_cdb08 (x=0.58)  
 K3_cdb09 (x=0.66)  
 K3_cdb10 (x=0.74)  
@@ -166,7 +166,7 @@ K3g_adb01 (x=0.03)
 K3g_adb02 (x=0.08)  
 K3g_adb05 (x=0.23)  
 K3g_adb07 (x=0.33)  
-K3g_adb10 (x=0.48)
+K3g_adb10 (x=0.48)  
 K3g_adb15 (x=0.73)  
 K3g_adb19 (x=0.92)  
 K3g_adb20 (x=0.97)  
