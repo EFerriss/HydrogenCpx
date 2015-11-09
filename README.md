@@ -28,7 +28,12 @@ Al2.py
 xenolithEquilibration_*.py
 ### Figure 15
 xenolithRims_*.py
-
+### Supplemental Figure 1
+CpxProfiles.py / K3 Diffusivity modeling / CpxProfiles_K3.png
+### Supplemental Figure 2-5
+CpxProfiles.py / K3 Diffusivity modeling / CpxProfiles_K3.png
+### Supplemental Figure 6
+SensitivityPlots.py
 ### Supplemental Figure 7
 CpxProfiles.py / CpxProfiles_bulkH_WB.png
 
