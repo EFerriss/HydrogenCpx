@@ -61,10 +61,10 @@ Spectra are also available through [PULI](http://puli.mfgi.hu/)
 ### Kunlun diopside E || a  
 Figures 2A and 3A, part of Figure 1D  
 average of:  
-K6_db_Ea
-K6_db_Ea_2
-K6_dc_Ea
-K6_dc_Ea_2
+K6_db_Ea  
+K6_db_Ea_2  
+K6_dc_Ea  
+K6_dc_Ea_2  
 
 ### Kunlun diopside E || b  
 Figure 2B and 3B, part of Figure 1D  
