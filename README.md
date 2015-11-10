@@ -21,6 +21,8 @@ Sundvall_SomeFe.py
 PMR.py  
 PMR_unpol_movie.m
 ### Figure 10
+Fe.py
+### Figure 11
 Arrhenius_Cpx_Lines.py
 ### Figure 12
 Al2.py
