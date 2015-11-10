@@ -20,7 +20,7 @@ resolution_microns = 100.
 
 lengths_microns = [1000.] * 3
 
-savefolder = '../../../CpxPaper/figures/'
+savefolder = '../../../../CpxPaper/figures/'
 workfile_80 = ''.join((savefolder, '-xenolithRims.txt'))
 workfile_90 = ''.join((savefolder, '-xenolithRims_90.txt'))
 
@@ -151,7 +151,10 @@ ax.text(2., 450., '$\uparrow$ 10 m/s\n(2-3 km)', rotation=-90., ha='center', va=
 #for minutes in [60.]:
 #    ax.plot([minutes, minutes], ax.get_ylim(), '-r')
 
-fig.savefig(''.join((savefolder, 'xenolithRims_zoom.png')), dpi=200)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15B.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15B', dpi=300)
+
 plt.show(fig)
 print 'Finished'
 

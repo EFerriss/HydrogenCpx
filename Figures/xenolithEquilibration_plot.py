@@ -18,7 +18,7 @@ import numpy as np
 
 lengths_microns = [1000.] * 3
 
-savefolder = '../../../CpxPaper/figures/'
+savefolder = '../../../../CpxPaper/figures/'
 workfile = ''.join((savefolder, '-xenolithEquilibration.txt'))
 
 with open(workfile, 'r') as rimfile:
@@ -101,6 +101,9 @@ ax.text(0.05, 97, '~olivine', rotation=30)
 ax.text(1., 88, '~clinopyroxene', rotation=25)
 #ax.legend(loc=4)
 
-fig.savefig(''.join((savefolder, 'xenolithEquilibration.png')), dpi=200)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14', dpi=300)
+
 plt.show(fig)
 print 'Finished'

@@ -707,8 +707,9 @@ for wb in wbs5:
         ax_idx = ax_idx + 1
 
 leg = axes[0].legend(loc=2, ncol=1, fancybox='on', fontsize=8)
-fig.savefig('../../../CpxPaper/figures/CpxProfiles5.png', dpi=100)
-fig.savefig('../../../CpxPaper/figures/CpxProfiles5.svg')
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig5.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig5', dpi=300)
 
 #%% Most things by peak rather than sample
 #tit = 'Peak area in Kunlun diopside after 6 days at 816 $\degree$C (cm$^{-2}$)'

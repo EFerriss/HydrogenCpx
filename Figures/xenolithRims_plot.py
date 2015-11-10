@@ -20,7 +20,7 @@ resolution_microns = 100.
 
 lengths_microns = [1000.] * 3
 
-savefolder = '../../../CpxPaper/figures/'
+savefolder = '../../../../CpxPaper/figures/'
 workfile_80 = ''.join((savefolder, '-xenolithRims.txt'))
 workfile_90 = ''.join((savefolder, '-xenolithRims_90.txt'))
 
@@ -145,7 +145,9 @@ for rate in ascent_rate_m_per_s:
 #for minutes in [60.]:
 #    ax.plot([minutes, minutes], ax.get_ylim(), '-r')
 
-fig.savefig(''.join((savefolder, 'xenolithRims.png')), dpi=200)
 plt.show(fig)
 print 'Finished'
 
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A', dpi=300)

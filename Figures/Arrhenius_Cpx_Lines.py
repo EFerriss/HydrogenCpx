@@ -202,7 +202,10 @@ plt.legend(handles=[para, parb, parc, paru], loc=1)
 
 ax.grid('off')
 
-fig.savefig('../../../CpxPaper/figures/Arrhenius_Cpx_Lines.png', dpi=200)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig11.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig11.png', dpi=300)
+
 
 plt.show(fig)
 print 'Finished'

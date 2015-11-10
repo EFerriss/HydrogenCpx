@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.46086795"
-     inkscape:cx="-21.774895"
-     inkscape:cy="526.18109"
+     inkscape:zoom="0.62133991"
+     inkscape:cx="75.852277"
+     inkscape:cy="777.89152"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,6 +45,14 @@
      inkscape:window-maximized="1" />
   <defs
      id="defs4">
+    <linearGradient
+       id="linearGradient4669"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ee0000;stop-opacity:1;"
+         offset="0"
+         id="stop4671" />
+    </linearGradient>
     <linearGradient
        id="linearGradient4644"
        osb:paint="solid">
@@ -4799,5 +4807,25 @@
        x="70.195511"
        y="425.17374"
        style="stroke-linecap:butt;stroke-linejoin:round" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 477.09173,246.41575 C 493.73447,77.214616 493.73447,77.214616 493.73447,77.214616 l -1.3869,-1.386895"
+       id="path3855"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 477.86552,383.02487 c 16.64274,169.20114 16.64274,169.20114 16.64274,169.20114 l -1.3869,1.38689"
+       id="path3855-1"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;stroke:#ee0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3875"
+       width="616.46002"
+       height="572.92456"
+       x="75.209427"
+       y="42.817421"
+       inkscape:export-filename="C:\Users\Ferriss\Documents\CpxPaper\Fig1.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
   </g>
 </svg>

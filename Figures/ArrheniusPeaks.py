@@ -186,13 +186,14 @@ Jstart = -10.4
 Kstart = -14.2
 Jdiff = 1.
 Kdiff = 2.
-plt.axhspan(Jstart, Jstart + Jdiff, facecolor='lime', alpha=0.25)
-plt.axhspan(Kstart, Kstart + Kdiff, facecolor='y', alpha=0.25)
+plt.axhspan(Jstart, Jstart + Jdiff, facecolor='palegreen')
+plt.axhspan(Kstart, Kstart + Kdiff, facecolor='khaki')
 
 tgap = 0.3
 ax.text(6.5, Kstart + tgap, '${Kunlun}$', fontsize=16, ha='center', va='center')
 ax.text(6.5, Jstart + tgap, '${Jaipur}$', fontsize=16, ha='center', va='center')
             
-#plt.tight_layout()
-fig.savefig('../../../CpxPaper/figures/ArrheniusPeaks.png', dpi=100)
-fig.savefig('../../../CpxPaper/figures/ArrheniusPeaks.svg')
+#%%            
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig8.eps', 
+            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig8.png', dpi=300)

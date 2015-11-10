@@ -111,7 +111,7 @@ ax.set_xlim(0, xmax)
 ax.set_ylim(0, 1.5)
 
 
-fig.savefig('../../../CpxPaper/figures/PMR_unpol.png', dpi=200)
+fig.savefig('../../../../CpxPaper/figures/PMR_unpol.png', dpi=1200)
 
 fig.show()
 print 'Finished'
