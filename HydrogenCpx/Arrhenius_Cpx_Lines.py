@@ -202,9 +202,9 @@ plt.legend(handles=[para, parb, parc, paru], loc=1)
 
 ax.grid('off')
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig11.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig11.png', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig11.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig11.tif', dpi=600)
 
 
 plt.show(fig)

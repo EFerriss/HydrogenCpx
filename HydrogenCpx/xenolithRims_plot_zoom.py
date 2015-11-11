@@ -151,9 +151,9 @@ ax.text(2., 450., '$\uparrow$ 10 m/s\n(2-3 km)', rotation=-90., ha='center', va=
 #for minutes in [60.]:
 #    ax.plot([minutes, minutes], ax.get_ylim(), '-r')
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15B.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15B', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15B.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15B.tif')
 
 plt.show(fig)
 print 'Finished'

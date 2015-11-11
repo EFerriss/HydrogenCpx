@@ -3,7 +3,7 @@
 @author: Ferriss
 
 """
-import my_spectra
+from HydrogenCpx import my_spectra
 import numpy as np
 import matplotlib.pyplot as plt
 import pynams.diffusivity_library as dlib
@@ -194,6 +194,6 @@ ax.text(6.5, Kstart + tgap, '${Kunlun}$', fontsize=16, ha='center', va='center')
 ax.text(6.5, Jstart + tgap, '${Jaipur}$', fontsize=16, ha='center', va='center')
             
 #%%            
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig8.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig8.png', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig8.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig8.tif')

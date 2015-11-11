@@ -13,7 +13,7 @@ import matplotlib.patches as mpatches
 from matplotlib.patches import Ellipse
 import matplotlib.gridspec as gridspec
 import numpy as np
-import my_spectra
+from HydrogenCpx import my_spectra
 import pynams.diffusivity_library as dlib
 from mpl_toolkits.axes_grid1.parasite_axes import SubplotHost
 
@@ -124,9 +124,9 @@ ax.grid(True)
 ax.legend(loc=4, ncol=1, fontsize=10, fancybox=True)
 plt.tight_layout()
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.tif', dpi=600)
 
 plt.show(fig)
 print 'Finished'

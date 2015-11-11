@@ -7,7 +7,7 @@ H diffusion in cpx project
 
 Create 3x3 subplots of initial polarized FTIR spectra for Kunlun, Jaipur, PMR
 """
-import my_spectra as sp
+from HydrogenCpx import my_spectra as sp
 from pynams import pynams as nams
 from pynams import styles as styles
 import matplotlib.pyplot as plt
@@ -179,9 +179,9 @@ main_legend = plt.legend(handles=leg_handles, ncol=3,
 #savefile = sp.default_savefolder + 'KJP_3x3_peakfit'
 #plt.savefig(savefile, dpi=savedpi)
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3.tif')
 #plt.savefig('Fig3.eps', format='eps', dpi=1000)
 # %% Now sum up the peaks for each one
 

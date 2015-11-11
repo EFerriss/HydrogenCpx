@@ -101,9 +101,9 @@ ax.text(0.05, 97, '~olivine', rotation=30)
 ax.text(1., 88, '~clinopyroxene', rotation=25)
 #ax.legend(loc=4)
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.tif', dpi=600)
 
 plt.show(fig)
 print 'Finished'

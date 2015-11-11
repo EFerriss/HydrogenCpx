@@ -7,7 +7,7 @@ Created on Wed Jun 24 17:55:02 2015
 Before and after heating comparison of FTIR spectra on the rims of cpx samples
 """
 
-import my_spectra
+from HydrogenCpx import my_spectra
 import string
 import numpy as np
 import matplotlib.pyplot as plt
@@ -214,7 +214,7 @@ for idx in [11]:
     labelpeaks(axes, idx, x, y1, y2, peakpos=[3620, 3550, 3460, 3355])
 
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig4.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig4', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig4.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig4.tif', dpi=600)
 #plt.savefig('Fig4.eps', format='eps', dpi=1000)

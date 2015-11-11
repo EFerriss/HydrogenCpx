@@ -10,7 +10,7 @@ Arrhenius plot of various diffusivities in clinopyroxene
 import pynams.diffusion as diff
 import numpy as np
 import matplotlib.pyplot as plt
-import my_spectra
+from HydrogenCpx import my_spectra
 plt.style.use('paper')
 
 K_bulk = my_spectra.K_bulk
@@ -91,9 +91,9 @@ for D in [
 
 ax.text(7.6, -11.5, '$Kunlun$ $diopside$', fontsize=16, backgroundcolor='w')
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig7.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig7', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig7.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig7.tif', dpi=600)
 
 plt.show(fig)
 print 'Finished'

@@ -145,9 +145,11 @@ for rate in ascent_rate_m_per_s:
 #for minutes in [60.]:
 #    ax.plot([minutes, minutes], ax.get_ylim(), '-r')
 
+
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A.eps', 
+#            format='eps', dpi=1000)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A.tif', dpi=600)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A.tif')
+
 plt.show(fig)
 print 'Finished'
-
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig15A', dpi=300)

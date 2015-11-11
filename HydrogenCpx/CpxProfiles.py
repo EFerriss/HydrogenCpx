@@ -6,7 +6,7 @@ Created on Wed Jun 24 17:55:02 2015
 Before and after heating comparison of FTIR spectra on the rims of cpx samples
 """
 
-import my_spectra
+from HydrogenCpx import my_spectra
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -707,9 +707,9 @@ for wb in wbs5:
         ax_idx = ax_idx + 1
 
 leg = axes[0].legend(loc=2, ncol=1, fancybox='on', fontsize=8)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig5.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig5', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig5.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig5.tif', dpi=600)
 
 #%% Most things by peak rather than sample
 #tit = 'Peak area in Kunlun diopside after 6 days at 816 $\degree$C (cm$^{-2}$)'
@@ -1016,9 +1016,9 @@ for k in [2, 5, 8, 11, 14]:
     idx = idx + 1
 
 
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig6.eps', 
-            format='eps', dpi=1000)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig6', dpi=300)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig6.eps', 
+#            format='eps', dpi=1000)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig6.tif', dpi=600)
 #plt.savefig('Fig6.eps', format='eps', dpi=1000)
 
 #%% Bulk WB areas with diffusivity estimates + additional symbols
