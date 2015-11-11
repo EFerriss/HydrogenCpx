@@ -11,7 +11,6 @@ See Ferriss et al. 2015 American Mineralogist for description.
 """
 import pynams.pynams as nams
 import numpy as np
-from uncertainties import ufloat
 import matplotlib.pyplot as plt
 
 plt.style.use('paper')

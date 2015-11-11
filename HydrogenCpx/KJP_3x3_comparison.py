@@ -58,7 +58,6 @@ elabels = ['E || a*', 'E || b $(\\beta)$', 'E || c',
            'E || $\\alpha$', 'E || b $(\\beta)$', 'E || $\gamma$']
 
 # %%  Figure showing 3 baselines
-
 ax = nams.plotsetup_3x3()
 
 PMRfac = 15
@@ -96,8 +95,10 @@ plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2.eps',
             format='eps', dpi=1000)
 plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2', dpi=300)
 plt.savefig('Fig2.eps', format='eps', dpi=1000)
+
 # %% Figure showing baseline-subtracted spectra and fit peaks
-ax = nams.plotsetup_3x3(xhi=high, xlo=low, xtickgrid=200, yhi=1.5)
+ax = nams.plotsetup_3x3(xhi=high, xlo=low, xtickgrid=200, yhi=1.5,
+                        fig_size_inches=(6.5, 6.3))
 
 peakpos_diopside = [3645, 3617, 3540, 3460, 3350]
 peakpos_augite = [3620, 3550, 3460, 3355]
