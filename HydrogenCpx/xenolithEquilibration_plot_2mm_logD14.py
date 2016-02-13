@@ -16,10 +16,10 @@ import matplotlib.pyplot as plt
 import json
 import numpy as np
 
-lengths_microns = [1000.] * 3
+lengths_microns = [2000.] * 3
 
-savefolder = '../../../../CpxPaper/figures/'
-workfile = ''.join((savefolder, '-xenolithEquilibration.txt'))
+savefolder = 'C://Users//Ferriss//Documents//CpxPaper//figures//'
+workfile = ''.join((savefolder, '-xenolithEquilibration_2mm_logD14.txt'))
 
 with open(workfile, 'r') as rimfile:
     a = rimfile.read()
@@ -62,49 +62,44 @@ ax.set_ylim(0., 100.)
 ax.set_xlim(0, max(time_hours))
 
 ### time ranges for comparison
-ascent_rate_m_per_s = [20., 10., 6., 4.]
-depth_km = np.array([40., 50.])
-ytloc = [2] * len(ascent_rate_m_per_s)
+#ascent_rate_m_per_s = [10., 4., 2., 1., 0.6]
+#depth_km = np.array([40., 50.])
+#ytloc = [2] * len(ascent_rate_m_per_s)
+#
+#depth_m = depth_km * 1E3
+#
+#idx = 0
+#for rate in ascent_rate_m_per_s:
+#    ascent_time_s = depth_m / rate
+#    ascent_time_m = ascent_time_s / 60.
+#    ascent_time_h = ascent_time_m / 60.
+#
+#    plt.axvspan(ascent_time_h[0], ascent_time_h[1], facecolor='grey', alpha=0.2)
+#
+#    ax.text(np.mean(ascent_time_h), ytloc[idx], 
+#        ''.join(('{:.1f}'.format(rate), ' m/s (',
+#                 '{:.0f}'.format(depth_km[0]), '-', 
+#                 '{:.0f}'.format(depth_km[1]), ' km)')),
+#        rotation=-90., ha='center', va='bottom')
+#    idx = idx + 1
 
-depth_m = depth_km * 1E3
-
-idx = 0
-for rate in ascent_rate_m_per_s:
-    ascent_time_s = depth_m / rate
-    ascent_time_m = ascent_time_s / 60.
-    ascent_time_h = ascent_time_m / 60.
-
-    plt.axvspan(ascent_time_h[0], ascent_time_h[1], facecolor='grey', alpha=0.2)
-
-    ax.text(np.mean(ascent_time_h), ytloc[idx], 
-        ''.join(('{:.1f}'.format(rate), ' m/s (',
-                 '{:.0f}'.format(depth_km[0]), '-', 
-                 '{:.0f}'.format(depth_km[1]), ' km)')),
-        rotation=-90., ha='center', va='bottom')
-    idx = idx + 1
-
-ax.set_xlim(0, 4)
+#ax.set_xlim(0, 4)
 
 labels = []
 for idx in range(5, -1, -1):
-#    labels.append(''.join(('logD=', '{:.1f}'.format(logD_list[idx]), ' m$^2$','/s')))
     labels.append(''.join(('10$^{','{:.1f}'.format(logD_list[idx]), '}$ m$^2$','/s')))
-#labels[0] = ''.join(('~ol.\n', labels[0]))
-ax.text(0.1, 97., labels[0], rotation=30)
-ax.text(0.8, 96, labels[1], rotation=10)
-ax.text(3.2, 96, labels[2], rotation=3)
-ax.text(3.2, 82, labels[3], rotation=10)
-ax.text(3.2, 57, labels[4], rotation=10)
-ax.text(3.2, 36.5, labels[5], rotation=10)
+#ax.text(0.1, 97., labels[0], rotation=30)
+#ax.text(50, 96, labels[1], rotation=10)
+ax.text(100, 90, labels[2], rotation=3)
+ax.text(400, 80, labels[3], rotation=10)
+ax.text(600, 40, labels[4], rotation=10)
+ax.text(600, 2, labels[5], rotation=10)
 
-ax.text(0.05, 97, '~olivine', rotation=30)
-ax.text(1., 88, '~clinopyroxene', rotation=25)
-#ax.legend(loc=4)
+#ax.text(0.05, 97, '~olivine', rotation=30)
+#ax.text(10., 80, '~clinopyroxene', rotation=25)
 
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.eps', 
-#            format='eps', dpi=1000)
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.tif', dpi=600)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\xenolithEquilibration_1mm.png', dpi=150)
+
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\xenolithEquilibration_2mm_logD14.png', dpi=150)
 
 plt.show(fig)
 print 'Finished'

@@ -38,7 +38,8 @@ Al = np.array([
                0.199+0.204,
                0.094+0.026,
                0.026+0.133,
-               0.016+0.005,])
+               0.016+0.005,]
+               )
 
 style = [Jaipur.basestyle,
          Nushan.basestyle,
@@ -91,17 +92,23 @@ xytextloc = [(-1., -15.)] * 8
 xytextloc[0] = (-1.75, -11.2) # Jaipur // a, c*
 xytextloc[4] = (-1.75, -11.5) # Jaipur // b
 xytextloc[1] = (-0.55, -12.35) # Nushan
-xytextloc[2] = (-1.325, -10.95) # PMR
-xytextloc[3] = (-1.12, -11.4) # Fuego
+xytextloc[2] = (-1.1, -10.85) # PMR
+xytextloc[3] = (-1., -11.5) # Fuego
 
 ### Plot main info above
-for idx in range(5):
+for idx in [1, 2]:
     ax.plot(x[idx], bulk[idx], #label=Names[idx], 
             clip_on=False, **style[idx])
     xyloc = (x[idx], bulk[idx])
     label = Names[idx]
-    ax.annotate(label, xy=xyloc, xytext=xytextloc[idx],
-                arrowprops=dict(facecolor='black', arrowstyle='->'))
+#    ax.annotate(label, xy=xyloc, xytext=xytextloc[idx],
+#                arrowprops=dict(facecolor='black', arrowstyle='->'))
+
+### Other labels
+ax.text(-0.4, -12.2, Names[1], ha='center')
+ax.annotate('augite PMR-53', xy=(-0.92, -10.96), xytext=(-1., -10.8),
+            arrowprops=dict(facecolor='black', arrowstyle='->'))
+ax.text(-1.18, -11.2, 'Pali-Aiki\nphenocryst cores\n(estimated D)', ha='left')
 
 ## Xenoliths
 #xenoMin = np.log10(0.2 - 0.07)
@@ -116,7 +123,7 @@ for idx in range(5):
 #ax.text(xenoMax, xenoDmin, 
 #        'peridotite\nmantle\ncpx?', ha='right', va='bottom')
 
-ax.set_xlim(-1.8, -0.2) 
+ax.set_xlim(-1.2, -0.2) 
 ax.grid(True)
 ax.legend(loc=4, ncol=1, fontsize=10, fancybox=True)
 plt.tight_layout()
@@ -124,34 +131,35 @@ plt.tight_layout()
 ### Fuego
 FuegoLoc = (np.log10(Al[3]), (bulk[0]+bulk[-1])/2.)
 ax.add_artist(Ellipse(FuegoLoc, 0.06, 1., facecolor='none'))
+ax.text(-0.84, -11.5, 'Fuego\nphenocryst', ha='right')
 
 # Add in Demouchy cpx in xenolith
 xDem = np.log10(0.096+0.129)
-yDem = -12.
+yDem = -11.7
 plt.plot(xDem, yDem, 'xk', markeredgewidth=3)
-ax.text(-1., -12.25, 'Demouchy et al. 2006\nxenolith cpx')
+ax.text(-0.6, -11.95, 'Pali-Aiki xenolith cpx\n(estimated D)', ha='center')
 
 # D'Orazio Pali-Aiki phenocryst cpx
 xPali = np.log10(np.array([0.+0.14, 0.009+0.119, 0.011+0.094, 0.044+0.114]))
 yPali = [-11.]*len(xPali)
 plt.plot(xPali, yPali, '+r', markeredgewidth=3, label='Pali-Aiki pheno. core')
 
-xPali = np.log10(np.array([0+0.267, 0.021+0.272, 0.011+0.144, 0.027+0.144]))
-yPali = [-11.]*len(xPali)
-plt.plot(xPali, yPali, 'og', markeredgewidth=1, label='Pali-Aiki pheno. rim',
-         alpha=0.5)
-
-xPali = np.log10(np.array([0.004+0.302, 0.032+0.244]))
-yPali = [-11.]*len(xPali)
-plt.plot(xPali, yPali, '^b', markeredgewidth=1, label='Pali-Aiki groundmass',
-         alpha=0.5)
-
-ax.legend(loc=3)
+#xPali = np.log10(np.array([0+0.267, 0.021+0.272, 0.011+0.144, 0.027+0.144]))
+#yPali = [-11.]*len(xPali)
+#plt.plot(xPali, yPali, 'og', markeredgewidth=1, label='Pali-Aiki pheno. rim',
+#         alpha=0.5)
+#
+#xPali = np.log10(np.array([0.004+0.302, 0.032+0.244]))
+#yPali = [-11.]*len(xPali)
+#plt.plot(xPali, yPali, '^b', markeredgewidth=1, label='Pali-Aiki groundmass',
+#         alpha=0.5)
+#
+#ax.legend(loc=3)
 
 #plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.eps', 
 #            format='eps', dpi=1000)
 #plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.tif', dpi=600)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Al_with_PaliAike', dpi=300)
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Al_zoomed', dpi=300)
 
 plt.show(fig)
 print 'Finished'

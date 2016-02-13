@@ -4,9 +4,11 @@ Created on Mon Jul 13 23:29:20 2015
 
 @author: Ferriss
 
-diffusivities as a function of Al content: focus only on Fe content > 0.05 apfu
-See Al.py for more Al contents
+diffusivities as a function of TETRAHEDRAL Al content
+Focus only on Fe content > 0.05 apfu
+See Al.py and Al2.py for more Al contents
 See Fe.py for peak-specific
+See spreadsheet cpx_normalization for data
 """
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -34,11 +36,11 @@ Names = ['Jaipur diopside\n(|| a, c*)',
          ]
 
 Al = np.array([
-               0.016+0.005,
-               0.199+0.204,
-               0.094+0.026,
-               0.026+0.133,
-               0.016+0.005,])
+               0.016,
+               0.204,
+               0.026,
+               0.133,
+               0.016,])
 
 style = [Jaipur.basestyle,
          Nushan.basestyle,
@@ -66,9 +68,7 @@ bulk = np.array([Jaipur.whatIsD(Celsius, orient=direction),
                  ])
 
 x = np.log10(Al)
-#%% Plot 
-
-### Setup 
+#%% Plot
 fig = plt.figure(figsize=(6, 5))
 gs = gridspec.GridSpec(1,1)
 ax = SubplotHost(fig, 1,1,1)
@@ -80,21 +80,21 @@ Al_labels = list(np.arange(0.0, 0.1, 0.02)) + list(np.arange(0.1, 0.9, 0.1))
 parasite_tick_locations = np.log10(Al_labels)
 ax_Al.set_xticks(parasite_tick_locations)
 ax_Al.set_xticklabels(Al_labels)
-ax_Al.axis["top"].set_label("Al (a.p.f.u.)")
+ax_Al.axis["top"].set_label("IV-Al (a.p.f.u.)")
 ax_Al.axis["top"].label.set_visible(True)
 ax_Al.axis["right"].major_ticklabels.set_visible(False)
- 
+
 ax.set_ylabel('log$_{10}$ diffusivity$_{H}$ $(m^{-2}/s)$ at 800 $\degree$C')
-ax.set_xlabel('log$_{10}$ Al (a.p.f.u.)')
+ax.set_xlabel('log$_{10}$ IV-Al (a.p.f.u.)')
 
 xytextloc = [(-1., -15.)] * 8
-xytextloc[0] = (-1.75, -11.2) # Jaipur // a, c*
-xytextloc[4] = (-1.75, -11.5) # Jaipur // b
-xytextloc[1] = (-0.55, -12.35) # Nushan
-xytextloc[2] = (-1.325, -10.95) # PMR
-xytextloc[3] = (-1.12, -11.4) # Fuego
+xytextloc[0] = (-2., -11.2) # Jaipur // a, c*
+xytextloc[4] = (-1.9, -11.6) # Jaipur // b
+xytextloc[1] = (-0.6, -12.35) # Nushan
+xytextloc[2] = (-1.5, -10.95) # PMR
+xytextloc[3] = (-1.2, -11.4) # Fuego
 
-### Plot main info above
+
 for idx in range(5):
     ax.plot(x[idx], bulk[idx], #label=Names[idx], 
             clip_on=False, **style[idx])
@@ -103,7 +103,7 @@ for idx in range(5):
     ax.annotate(label, xy=xyloc, xytext=xytextloc[idx],
                 arrowprops=dict(facecolor='black', arrowstyle='->'))
 
-## Xenoliths
+### Xenoliths
 #xenoMin = np.log10(0.2 - 0.07)
 #xenoMax = np.log10(0.2 + 0.07)
 #xenoDrange = 0.5
@@ -111,47 +111,48 @@ for idx in range(5):
 #fbox = mpatches.FancyBboxPatch([xenoMin, xenoDmin], xenoMax-xenoMin, xenoDrange,
 #                               boxstyle=mpatches.BoxStyle("Round", pad=0.02),
 #                               fill=True, alpha=0.25, color='r')
-##                               label='peridodite mantle cpx?')
 #ax.add_patch(fbox)
 #ax.text(xenoMax, xenoDmin, 
 #        'peridotite\nmantle\ncpx?', ha='right', va='bottom')
 
-ax.set_xlim(-1.8, -0.2) 
-ax.grid(True)
-ax.legend(loc=4, ncol=1, fontsize=10, fancybox=True)
-plt.tight_layout()
 
 ### Fuego
 FuegoLoc = (np.log10(Al[3]), (bulk[0]+bulk[-1])/2.)
 ax.add_artist(Ellipse(FuegoLoc, 0.06, 1., facecolor='none'))
 
+ax.set_xlim(-2.0, -0.2) 
+ax.grid(True)
+ax.legend(loc=4, ncol=1, fontsize=10, fancybox=True)
+plt.tight_layout()
+
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.eps', 
+#            format='eps', dpi=1000)
+#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.tif', dpi=600)
+
 # Add in Demouchy cpx in xenolith
-xDem = np.log10(0.096+0.129)
+xDem = np.log10(0.096)
 yDem = -12.
 plt.plot(xDem, yDem, 'xk', markeredgewidth=3)
-ax.text(-1., -12.25, 'Demouchy et al. 2006\nxenolith cpx')
+ax.text(-1.3, -12.25, 'Demouchy et al. 2006\nxenolith cpx')
 
 # D'Orazio Pali-Aiki phenocryst cpx
-xPali = np.log10(np.array([0.+0.14, 0.009+0.119, 0.011+0.094, 0.044+0.114]))
+xPali = np.log10(np.array([0.14, 0.119, 0.094, 0.114]))
 yPali = [-11.]*len(xPali)
 plt.plot(xPali, yPali, '+r', markeredgewidth=3, label='Pali-Aiki pheno. core')
 
-xPali = np.log10(np.array([0+0.267, 0.021+0.272, 0.011+0.144, 0.027+0.144]))
+xPali = np.log10(np.array([0.267, 0.272, 0.144, 0.144]))
 yPali = [-11.]*len(xPali)
 plt.plot(xPali, yPali, 'og', markeredgewidth=1, label='Pali-Aiki pheno. rim',
          alpha=0.5)
 
-xPali = np.log10(np.array([0.004+0.302, 0.032+0.244]))
+xPali = np.log10(np.array([0.302, 0.244]))
 yPali = [-11.]*len(xPali)
 plt.plot(xPali, yPali, '^b', markeredgewidth=1, label='Pali-Aiki groundmass',
          alpha=0.5)
 
 ax.legend(loc=3)
-
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.eps', 
-#            format='eps', dpi=1000)
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig12.tif', dpi=600)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Al_with_PaliAike', dpi=300)
+            
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Al_tetrahedral', dpi=300)
 
 plt.show(fig)
 print 'Finished'

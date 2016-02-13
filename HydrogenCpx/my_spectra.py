@@ -26,14 +26,16 @@ K_water_known = nams.ufloat(29, 4)
 J_water_known = nams.ufloat(30, 2)
 PMR_water_known = nams.ufloat(268, 8)
 
-# peak distributions
+# peak distributions in the following order:
+# In order: 3645, 3617, 3540, 3443, 3350 ###
+# leaving out 3460 cm-1
 K_init_peak_fraction = np.array([0.12, 0.32, 0.18, 0.19, 0.19])
 J_init_peak_fraction = np.array([0.06, 0.09, 0.13, 0.34, 0.38])
 
-# peak-specific water content - leaving out 3460 cm-1
+# peak-specific water content 
 K_water_peaks = K_water_known * K_init_peak_fraction
 J_water_peaks = J_water_known * J_init_peak_fraction
-#
+
 ### Saved preferred initial values (i), diffusivities (D), and errors (e) ####
 ### In order: 3645, 3617, 3540, 3443, 3350, BULK H ###
 i_K3 = [12., 25., 23.3, 23., 10., 1.24]
@@ -56,7 +58,6 @@ i_J = [2.95, 6.32, 16.71, 14.37, 30., 1.32]
 D_J = [-10.00, -9.70, -9.60, -9.80, -9.95, -9.9]
 e_J = [0.30, 0.30, 0.10, 0.20, 0.25, 0.4]
 
-#my_ilist = [i_K3, i_K91, i_K154, i_J, i_K5]
 K_dlist = [D_K3, D_K91, D_K154, D_K5]
 K_elist = [e_K3, e_K91, e_K154,e_K5]
 
@@ -87,44 +88,48 @@ for idx in range(4):
     K_3443_e[idx] = K_elist[idx][3]
     K_3350_e[idx] = K_elist[idx][4]
 
-# Kunlun diopside samples and spectra
-# 
-class Sample_Kunlun(nams.Sample):
-    mineral_name = 'diopside'
-    IGSN = 'IEFERKUN0'
-    source = 'AMNH, Kunlun Mts China'
-    initial_water = K_water_known
+#%% Kunlun diopside samples
 
-K3 = Sample_Kunlun()
+K3 = nams.Sample(thickness_microns=None, IGSN='IEFERKUN0', 
+                 mineral_name='diopside', initial_water=K_water_known)
+
+K4 = nams.Sample(thickness_microns=None, IGSN='IEFERKUN0', 
+                 mineral_name='diopside', initial_water=K_water_known)
+
+K5 = nams.Sample(thickness_microns=None, IGSN='IEFERKUN0', 
+                 mineral_name='diopside', initial_water=K_water_known)
+
+K5slice = nams.Sample(thickness_microns=None, IGSN='IEFERKUN0', 
+                      mineral_name='diopside', initial_water=K_water_known)
+
+K6 = nams.Sample(thickness_microns=None, IGSN='IEFERKUN0', 
+                 mineral_name='diopside', initial_water=K_water_known)
+
 K3.twoA_list = [1998, 1988, 2002, 1998, 1997]
 K3.twoB_list = [1481, 1484, 1479, 1482, 1482]
 K3.twoC_list = [1803, 1801, 1800, 1796, 1804]
 K3.sample_thick_microns = nams.get_3thick(K3)
 
-K4 = Sample_Kunlun()
 K4.twoA_list = 7000
 K4.twoB_list = [2185, 2190, 2188, 2185, 2188]
 K4.twoC_list = [1546, 1551, 1536, 1548, 1548]
 K4.sample_thick_microns = nams.get_3thick(K4)
 
-K5 = Sample_Kunlun()
 K5.twoA_list = 3450
 K5.twoB_list = [1614, 1609, 1612, 1602, 1607]
 K5.twoC_list = [1756, 1759, 1748, 1763, 1759]
 K5.sample_thick_microns = nams.get_3thick(K5)
 
-K5slice = Sample_Kunlun()
 K5slice.twoA_list = [955, 955, 954, 957, 953]
 K5slice.twoB_list = K5.twoB_list
 K5slice.twoC_list = K5.twoC_list
 
-K6 = Sample_Kunlun()
 K6.twoA_list = [6912, 6913, 6917, 6913, 6917]
 K6.twoB_list = [2731, 2739, 2741, 2723, 2705]
 K6.twoC_list = [1524, 1511, 1500, 1488, 1517]
 K6.sample_thick_microns = nams.get_3thick(K6)
             
-           
+#%%           
 class SpecKunlun_RaypathC(nams.Spectrum):
     base_low_wn = 3500
 
@@ -138,26 +143,16 @@ class KunlunProfile(nams.Profile):
 #                      'marker' : '^', 'markerfacecolor' : 'b', 
 #                      'fillstyle' : 'none', 'markersize' : 10}
 
-#
-#%% Kunlun diopside FTIR spectra
-# K3: 
-# K4: 904 C
-# K5: 1000 C
-
 #%% K3: Kunlun diopside heated at 700 C for 2 hrs, then 817 C
-
 ### K3 true initial ### 
-profile_K3_trueInit_raypathA = KunlunProfile()
-profile_K3_trueInit_raypathA.sample = K3
-profile_K3_trueInit_raypathA.profile_name = 'K3 initial R || a*'
-profile_K3_trueInit_raypathA.direction = 'a'
-profile_K3_trueInit_raypathA.raypath = 'b'
-profile_K3_trueInit_raypathA.initial_profile = profile_K3_trueInit_raypathA
-leng = profile_K3_trueInit_raypathA.set_len()
-profile_K3_trueInit_raypathA.fname_list = ['K3_sp13_Bda', 'K3_sp14_Cda']
-profile_K3_trueInit_raypathA.positions_microns = [leng/2., leng/2.]
+leng = np.mean(K3.twoA_list)
+profile_K3_trueInit_raypathA = nams.Profile(sample=K3, 
+                                profile_name = 'K3 initial R || a*',
+                                direction = 'a', raypath = 'b',
+                                fname_list = ['K3_sp13_Bda', 'K3_sp14_Cda'],
+                                positions_microns = [leng/2., leng/2.])
 
-profile_K3_trueInit_raypathB = KunlunProfile()
+profile_K3_trueInit_raypathB = nams.Profile()
 profile_K3_trueInit_raypathB.sample = K3
 profile_K3_trueInit_raypathB.profile_name = 'K3 initial R || b'
 profile_K3_trueInit_raypathB.direction = 'b'
@@ -397,10 +392,8 @@ profile_K3_817C_6days_b.fname_list = ['K3g_bdc01', 'K3g_bdc02', 'K3g_bdc06',
                                       'K3g_bdc10', 'K3g_bdc12']
 profile_K3_817C_6days_b.positions_microns = [1150., 950., 550.,
                                              150., 50.]
-# Confirm orientations...
-#                                            50., 150., 550., 
-#                                             950., 1150.]
 
+#%%
 profile_K3_817C_6days_c = KunlunProfile()
 profile_K3_817C_6days_c.time_seconds = 6.*24.*3600
 profile_K3_817C_6days_c.sample = K3
@@ -539,6 +532,7 @@ del profile_K4_904C_1hr_A.positions_microns[-2:]
 del profile_K4_904C_1hr_A.fname_list[-2:]
 profile_K4_904C_1hr_A.initial_profile = profile_K4_quench_A
 
+#%%
 # Kunlun K4bdcH
 profile_K4_904C_1hr_B = KunlunProfile()
 profile_K4_904C_1hr_B.sample = K4
@@ -911,52 +905,37 @@ K5wb.time_seconds = 75.*3600
 #K5wb.diffusivities_log10_m2s = [-13.2, -13.2, -13.2]
 
 
-#%% K6: I have polarized measurements for
-
-class SpecK6(nams.Spectrum):
-    sample = K6
-
-
-class SpecK6_db(SpecK6):
-    raypath = 'b'
-    thick_microns = K6.sample_thick_microns[1]
-
-
-class SpecK6_dc(SpecK6):
-    raypath = 'c'
-    thick_microns = K6.sample_thick_microns[2]
-
-K6_db_Ea = SpecK6_db()
+#%% K6: polarized measurements
+K6_db_Ea = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[1])
 K6_db_Ea.fname = 'K6_db_Ea'
 K6_db_Ea.polar = 'E || a'
 
-K6_db_Ea_2 = SpecK6_db()
+K6_db_Ea_2 = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[1])
 K6_db_Ea_2.fname = 'K6_db_Ea_2'
 K6_db_Ea_2.polar = 'E || a'
 
-K6_dc_Ea = SpecK6_dc()
+K6_dc_Ea = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[2])
 K6_dc_Ea.fname = 'K6_dc_Ea'
 K6_dc_Ea.polar = 'E || a'
 
-K6_dc_Ea_2 = SpecK6_dc()
+K6_dc_Ea_2 = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[2])
 K6_dc_Ea_2.fname = 'K6_dc_Ea_2'
 K6_dc_Ea_2.polar = 'E || a'
 
-K6_dc_Eb = SpecK6_dc()
+K6_dc_Eb = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[2])
 K6_dc_Eb.fname = 'K6_dc_Eb'
 K6_dc_Eb.polar = 'E || b'
 
-K6_dc_Eb_2 = SpecK6_dc()
+K6_dc_Eb_2 = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[2])
 K6_dc_Eb_2.fname = 'K6_dc_Eb_2'
 K6_dc_Eb_2.polar = 'E || b'
 
-K6_db_Ec_2 = SpecK6_db()
+K6_db_Ec_2 = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[1])
 K6_db_Ec_2.fname = 'K6_db_Ec_2'
 K6_db_Ec_2.polar = 'E || c'
 
-nams.make_filenames()
-
-ave_K6_Ea = SpecK6()
+#%%
+ave_K6_Ea = nams.Spectrum(sample=K6)
 ave_K6_Ea.other_name = 'Average of 4 initial K6 spectra, E || a'
 ave_K6_Ea.make_average_spectra([K6_db_Ea, K6_db_Ea_2, K6_dc_Ea, K6_dc_Ea_2])
 ave_K6_Ea.polar = 'E || a'
@@ -968,7 +947,7 @@ ave_K6_Ea.base_mid_yshift = 0.09
 ave_K6_Ea.base_w_small = 0.035
 ave_K6_Ea.base_w_large = 0.035
 
-ave_K6_Eb = SpecK6()
+ave_K6_Eb = nams.Spectrum(sample=K6)
 ave_K6_Eb.other_name = 'Average of 2 initial K6 spectra, E || b'
 ave_K6_Eb.make_average_spectra([K6_dc_Eb, K6_dc_Eb_2])
 ave_K6_Eb.polar = 'E || b'
@@ -980,7 +959,7 @@ ave_K6_Eb.base_mid_yshift = 0.04
 ave_K6_Eb.base_w_small = 0.035
 ave_K6_Eb.base_w_large = 0.035
 
-ave_K6_Ec = SpecK6()
+ave_K6_Ec = nams.Spectrum(sample=K6)
 ave_K6_Ec.other_name = 'Initial K6 spectrum with E || c'
 ave_K6_Ec.make_average_spectra([K6_db_Ec_2])
 ave_K6_Ec.polar = 'E || c'
@@ -1000,13 +979,10 @@ class Sample_Jaipur(nams.Sample):
 
 J_CurveSnap = Sample_Jaipur()
 J_CurveSnap.sample_thick_microns = 0.8e6
-    
-class SpecJ_CurveSnap(nams.Spectrum):
-    sample = J_CurveSnap
-    instrument = 'CurveSnap software - Woods et al. 2000'
 
 # polarized spectra in three dimensions from Woods et al. 2000
-J_Ea = SpecJ_CurveSnap()
+J_Ea = nams.Spectrum()
+J_Ea.sample = J_CurveSnap
 J_Ea.other_name = 'J_Ea'
 J_Ea.fname = 'J_Ea'
 J_Ea.polar = 'a'
@@ -1018,7 +994,8 @@ J_Ea.base_mid_yshift = 0.085
 J_Ea.base_w_small = 0.01
 J_Ea.base_w_large = 0.01
 
-J_Eb = SpecJ_CurveSnap()
+J_Eb = nams.Spectrum()
+J_Eb.sample = J_CurveSnap
 J_Eb.other_name = 'J_Eb'
 J_Eb.fname = 'J_Eb'
 J_Eb.polar = 'b'
@@ -1030,7 +1007,8 @@ J_Eb.base_mid_yshift = 0.05
 J_Eb.base_w_small = 0.04
 J_Eb.base_w_large = 0.04
 
-J_Ec = SpecJ_CurveSnap()
+J_Ec = nams.Spectrum()
+J_Ec.sample = J_CurveSnap
 J_Ec.other_name = 'J_Ec'
 J_Ec.fname = 'J_Ec'
 J_Ec.polar = 'c'
@@ -1042,6 +1020,7 @@ J_Ec.base_mid_yshift = 0.04
 J_Ec.base_w_small = 0.025
 J_Ec.base_w_large = 0.025
 
+#%%
 # J1: 
 # a -> c
 # b -> a
@@ -1053,13 +1032,16 @@ J1.twoB_list = [3218, 3236, 3190, 3232, 3231] # originally twoC
 J1.sample_thick_microns = nams.get_3thick(J1)
 
 class ProfileJ1(nams.Profile):
-    sample = J1
+    def __init__(self):
+        self.sample = J1
         
 class SpecJ1(nams.Spectrum):
-    sample = J1
+    def __init__(self):
+        self.sample = J1
 
 class SpecJaipur_RaypathA(SpecJ1):
-    base_high_wn = 3600
+    def __init__(self):
+        self.base_high_wn = 3600
 
 # J1 initial profiles
 profile_J1_init_A = ProfileJ1()
@@ -1168,9 +1150,7 @@ profile_J1_904C_30m_C.positions_microns = [75., 75.+100., 75+400.,
                                             leng-50]
 profile_J1_904C_30m_C.initial_profile = profile_J1_init_C
 
-
-nams.make_filenames()
-
+#%%
 J1wb_initial = nams.WholeBlock()
 J1wb_initial.name = 'Jaipur diopside initial'
 J1wb_initial.time_seconds = 10.
@@ -1188,6 +1168,7 @@ J1wb.profiles = [profile_J1_904C_30m_A,
                  profile_J1_904C_30m_B, 
                  profile_J1_904C_30m_C]
 
+#%% PMR
 
 class PMR(nams.Sample):
     initial_water = 268
@@ -1197,11 +1178,8 @@ class PMR(nams.Sample):
 PMR_CurveSnap = PMR()
 PMR_CurveSnap.sample_thick_microns = 1e4
 
-class SpecP_CurveSnap(nams.Spectrum):
-    sample = PMR_CurveSnap
-    instrument = 'CurveSnap software - Bell et al. 1995(?)'
-
-PMR_Ea = SpecP_CurveSnap()
+PMR_Ea = nams.Spectrum()
+PMR_Ea.sample = PMR_CurveSnap
 PMR_Ea.other_name = 'PMR_Ea'
 PMR_Ea.fname = 'PMR_Ea'
 PMR_Ea.polar = 'E || alpha'
@@ -1213,7 +1191,8 @@ PMR_Ea.base_mid_yshift = 1.65
 PMR_Ea.base_w_small = 0.3
 PMR_Ea.base_w_large = 0.3
 
-PMR_Eb = SpecP_CurveSnap()
+PMR_Eb = nams.Spectrum()
+PMR_Eb.sample = PMR_CurveSnap
 PMR_Eb.other_name = 'PMR_Eb'
 PMR_Eb.fname = 'PMR_Eb'
 PMR_Eb.polar = 'E || beta'
@@ -1225,7 +1204,8 @@ PMR_Eb.base_mid_yshift = 0.3
 PMR_Eb.base_w_small = 0.3
 PMR_Eb.base_w_large = 0.35
 
-PMR_Ec = SpecP_CurveSnap()
+PMR_Ec = nams.Spectrum()
+PMR_Ec.sample = PMR_CurveSnap
 PMR_Ec.other_name = 'PMR_Ec'
 PMR_Ec.fname = 'PMR_Ec'
 PMR_Ec.polar = 'E || gamma'
@@ -1326,7 +1306,7 @@ class K(nams.diffusion.Diffusivities):
         self.logDx_error = error
         self.celsius_all = [816., 904., 904., 1000.]
         self.description = description
-        self.basestyle = self.basestyle.copy()
+        self.basestyle = dict()
         self.basestyle['color'] = color
         self.basestyle['marker'] = marker
         self.basestyle['markersize'] = markersize

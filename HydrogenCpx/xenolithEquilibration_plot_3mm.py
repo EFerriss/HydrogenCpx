@@ -16,10 +16,10 @@ import matplotlib.pyplot as plt
 import json
 import numpy as np
 
-lengths_microns = [1000.] * 3
+lengths_microns = [3000.] * 3
 
-savefolder = '../../../../CpxPaper/figures/'
-workfile = ''.join((savefolder, '-xenolithEquilibration.txt'))
+savefolder = 'C://Users//Ferriss//Documents//CpxPaper//figures//'
+workfile = ''.join((savefolder, '-xenolithEquilibration_3mm.txt'))
 
 with open(workfile, 'r') as rimfile:
     a = rimfile.read()
@@ -62,7 +62,7 @@ ax.set_ylim(0., 100.)
 ax.set_xlim(0, max(time_hours))
 
 ### time ranges for comparison
-ascent_rate_m_per_s = [20., 10., 6., 4.]
+ascent_rate_m_per_s = [10., 4., 2., 1., 0.6]
 depth_km = np.array([40., 50.])
 ytloc = [2] * len(ascent_rate_m_per_s)
 
@@ -83,28 +83,23 @@ for rate in ascent_rate_m_per_s:
         rotation=-90., ha='center', va='bottom')
     idx = idx + 1
 
-ax.set_xlim(0, 4)
+#ax.set_xlim(0, 4)
 
 labels = []
 for idx in range(5, -1, -1):
-#    labels.append(''.join(('logD=', '{:.1f}'.format(logD_list[idx]), ' m$^2$','/s')))
     labels.append(''.join(('10$^{','{:.1f}'.format(logD_list[idx]), '}$ m$^2$','/s')))
-#labels[0] = ''.join(('~ol.\n', labels[0]))
 ax.text(0.1, 97., labels[0], rotation=30)
-ax.text(0.8, 96, labels[1], rotation=10)
-ax.text(3.2, 96, labels[2], rotation=3)
-ax.text(3.2, 82, labels[3], rotation=10)
-ax.text(3.2, 57, labels[4], rotation=10)
-ax.text(3.2, 36.5, labels[5], rotation=10)
+ax.text(4., 96, labels[1], rotation=10)
+ax.text(15, 96, labels[2], rotation=3)
+ax.text(17, 75, labels[3], rotation=10)
+ax.text(20, 50, labels[4], rotation=10)
+ax.text(21, 22, labels[5], rotation=10)
 
 ax.text(0.05, 97, '~olivine', rotation=30)
-ax.text(1., 88, '~clinopyroxene', rotation=25)
-#ax.legend(loc=4)
+ax.text(10., 80, '~clinopyroxene', rotation=25)
 
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.eps', 
-#            format='eps', dpi=1000)
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig14.tif', dpi=600)
-plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\xenolithEquilibration_1mm.png', dpi=150)
+
+plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\xenolithEquilibration_3mm.png', dpi=150)
 
 plt.show(fig)
 print 'Finished'
