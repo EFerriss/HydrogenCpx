@@ -16,6 +16,8 @@ from uncertainties import ufloat
 import matplotlib.lines as mlines
 import csv
 
+reload(nams)
+
 plt.close('all')
 plt.style.use('paper')
 savedpi = 300
@@ -29,67 +31,84 @@ low = 3200
 # saving all baselines as -3baselines.CSV
 Kunlun_list = [sp.ave_K6_Ea, sp.ave_K6_Eb, sp.ave_K6_Ec]
 K_area, K_water = nams.water_from_spectra(Kunlun_list, proper3=True, 
-                                        savebaselines=False, show_plots=False)
+                                          phase='cpx', calibration='Bell',
+                                          savebaselines=False, show_plots=False)
 
 
-Jaipur_list = [sp.J_Ea, sp.J_Eb, sp.J_Ec]
+Jaipur_list = [sp.J_Ea, sp.J_Eb, sp.J_Ec] # These are from Woods et al.
 J_area, J_water = nams.water_from_spectra(Jaipur_list, proper3=True, 
-                                        savebaselines=False, show_plots=False)
+                                          phase='cpx', calibration='Bell',
+                                          savebaselines=False, show_plots=False)
 
+#%%
+reload(nams)
+reload(sp)
+J2_list = [sp.J2_Emid, sp.J2_Eshort, sp.J2_Elong] # Jaipur diopside sample J2
+J2_area, J2_water = nams.water_from_spectra(J2_list, proper3=True, 
+                                            phase='cpx', calibration='Bell',
+                                            savebaselines=False, 
+                                            show_plots=False, 
+                                            main_yshift=0.05,
+                                            window_large=0.04, 
+                                            window_small=0.04
+                                            )
+
+#%%
 
 PMR_list = [sp.PMR_Ea, sp.PMR_Eb, sp.PMR_Ec]
 PMR_area, PMR_water = nams.water_from_spectra(PMR_list, proper3=True,
-                                            savebaselines=False, 
-                                            show_plots=False)
+                                              phase='cpx',
+                                              calibration='Bell',
+                                              savebaselines=False, 
+                                              show_plots=False)
 
-spec_list = Kunlun_list + Jaipur_list + PMR_list
+spec_list = Kunlun_list + Jaipur_list + PMR_list + J2_list
+spec_list_revised = Kunlun_list + J2_list + PMR_list
 
 # Save main baselines in -baseline.CSV for use in Matlab peakfitting
-for x in spec_list:
+for x in spec_list_revised:
     # Without this, it just saves the most recent (i.e., too low) baseline
-    x.make_baseline(2)
-    x.save_baseline(2)
+    x.make_baseline(linetype='quadratic')
+    x.save_baseline()
 
-for x in spec_list:
+for x in spec_list_revised:
     print x.fname
+    print len(x.wn), len(x.abs_cm)
     
 elabels = ['E || a*', 'E || b $(\\beta)$', 'E || c',
-           'E || a', 'E || b $(\\beta)$', 'E || c*',
+           'E || a*', 'E || b $(\\beta)$', 'E || c',
            'E || $\\alpha$', 'E || b $(\\beta)$', 'E || $\gamma$']
 
-# %%  Figure showing 3 baselines
-ax = nams.plotsetup_3x3()
+#%%   Figure showing 3 baselines
+ax = nams.plotsetup_3x3(yhi=1.5)
 
-PMRfac = 15
+PMRfac = 10
 
-abs_shift = 0.12
+abs_shift = 0.15
 
-for k in range(9):
-    bdata = spec_list[k].get_3baselines()
+for k, spec in enumerate(spec_list_revised):
+    bdata = spec.get_3baselines()
     if k > 5:
-        ax[k].plot(spec_list[k].wn, spec_list[k].abs_cm / PMRfac + abs_shift, 
-                        **styles.style_spectrum)
+        ax[k].plot(spec.wn, spec.abs_cm / PMRfac + abs_shift, 
+                   **styles.style_spectrum)
         for x in range(1, 4):
             ax[k].plot(bdata[:,0], bdata[:,x]/PMRfac + abs_shift,
                         **styles.style_baseline)
     else:
-        ax[k].plot(spec_list[k].wn, spec_list[k].abs_cm + abs_shift,
-                        **styles.style_spectrum)
+        ax[k].plot(spec.wn, spec.abs_cm + abs_shift,
+                   **styles.style_spectrum)
         for x in range(1, 4):
             ax[k].plot(bdata[:,0], bdata[:,x] + abs_shift, 
                         **styles.style_baseline)
-    ax[k].text(3030, 0.75, elabels[k], horizontalalignment='right',
+    ax[k].text(3030, 1.2, elabels[k], horizontalalignment='right',
                         backgroundcolor='w', fontsize=11)
-
+ 
 ax[0].set_ylabel('Kunlun diopside\n%s ppm H$_2$O' % numformat.format(K_water))
 ax[3].set_ylabel('absorbance (cm$^{-1}$)\n' +
                     'Jaipur diopside\n%s ppm H$_2$O' % 
-                    numformat.format(J_water))
+                    numformat.format(J2_water))
 ax[6].set_ylabel('augite PMR-53 / %i\n%s ppm H$_2$O' % 
                   (PMRfac, numformat.format(PMR_water)))
-
-#savefile = sp.default_savefolder + 'KJP_3x3_baselines'
-#plt.savefig(savefile, dpi=savedpi)
 
 plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2.eps', 
             format='eps', dpi=1000)
@@ -171,20 +190,14 @@ leg_handles = [add_marker1, add_marker2, add_marker3]
 
 
 main_legend = plt.legend(handles=leg_handles, ncol=3,
-#                          bbox_to_anchor=(1, 0, 0, -0.5), 
                           bbox_to_anchor=(250, 0, 1500, -0.75),
                           bbox_transform=ax[6].transData, 
                           frameon=True)
 
-#savefile = sp.default_savefolder + 'KJP_3x3_peakfit'
-#plt.savefig(savefile, dpi=savedpi)
-
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3.eps', 
-#            format='eps', dpi=1000)
 plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig3.tif')
-#plt.savefig('Fig3.eps', format='eps', dpi=1000)
-# %% Now sum up the peaks for each one
 
+
+# %% Now sum up the peaks for each one
 ax = nams.plotsetup_3stacked(yhi=2, ytickgrid=0.5)
 
 cpx_calib_Bell95 = 1.0 / ufloat(7.08, 0.32)
@@ -212,15 +225,6 @@ def sum_and_plot_peaks(rlist, axplot, fac=1):
         sum_areas[m] = dx*dy
     ax[axplot].plot(xplot, bigsum/fac, **styles.style_summed)
     return sum_areas
-
-### version 3
-#ax[0].set_ylabel('Kunlun diopside\n%s ppm H$_2$O' % numformat.format(K_water))
-#ax[1].set_ylabel('Total polarized FTIR absorbance ' + 
-#                    'over 3 directions (cm$^{-1})$\n' +
-#                    'Jaipur diopside\n%s ppm H$_2$O' % 
-#                    numformat.format(J_water))
-#ax[2].set_ylabel('augite PMR-53 / %i\n%s ppm H$_2$O' % 
-#                  (PMRfac, numformat.format(PMR_water)))
 
 ax[0].set_ylabel('absorbance (cm$^{-1}$)')
 ax[1].set_ylabel('absorbance (cm$^{-1}$)')
@@ -330,3 +334,5 @@ for peak_idx in range(npeaks):
     b = polar[1][peak_idx] / peaksum[peak_idx]
     c = polar[2][peak_idx] / peaksum[peak_idx]
     print a, b, c
+    
+    

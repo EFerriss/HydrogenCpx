@@ -23,7 +23,7 @@ time_minutes = np.linspace(0.00001, 25., 75) * 60.
 time_hours = time_minutes / 60.
 
 direction = 0 # 0=[100]*, 1=[010], 2=[001]
-points_in_calc = 25
+points_in_calc = 50
 
 ################## Set up and run calculation ################################
 

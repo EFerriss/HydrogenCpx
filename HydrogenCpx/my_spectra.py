@@ -1468,3 +1468,16 @@ D_Jaipur_peak5.get_from_wholeblock(peak_idx=5,
 #a = 10.**(np.array(D_Jaipur_bulkH.logDx*2))
 #b = 10.**(np.array(D_Kunlun_bulkH.logDx[1:3]))
 #H_diopside_difference.logDx
+
+#%% Jaipur diopside J2 polarized spectra in 3 directions
+J2_dshort_microns = np.mean([3398., 3381., 3397., 3364., 3399.])
+J2_dmid_microns = np.mean([5129., 5125., 5117., 5102., 5136.])
+
+J2_Elong = nams.Spectrum(fname='J2_dshort_Elong2', 
+                         thick_microns=J2_dshort_microns)
+J2_Emid = nams.Spectrum(fname='J2_dshort_Emid2', 
+                        thick_microns=J2_dshort_microns)
+J2_Eshort = nams.Spectrum(fname='J2_dmid_Eshort', 
+                          thick_microns=J2_dmid_microns)
+
+J2_Eshort.plot_spectrum()
