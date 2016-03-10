@@ -3,7 +3,7 @@ FTIR spectra, baselines, peakfits, and python code for a project measuring hydro
 ## Names for python codes for generating figures
 Sample information and profile spectra are setup in my_spectra.py
 
-### Figures 1, 2, 3; Table 1
+### Figures 1, 2, 3; Table describing hydroxyl stretching
 KJP_3x3_comparison.py  
 cpx_SampleCharacterization.svg  
 ### Figure 4
