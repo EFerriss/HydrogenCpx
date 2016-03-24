@@ -22,12 +22,12 @@ lengths_microns = [3000.] * 3
 logD_list = [-12.5, -12., -11.5, -11., -10.5, -10.]
 
 # 0 to 24 hours
-time_minutes = list(np.arange(0.1, 25.1, 0.25)*60.)
+time_minutes = [0.25, 0.5, 0.75] + list(np.arange(1, 11, 0.5)) + range(15, 65, 1) + range(65, 5*65, 5)
 
 water_fraction = 0.80 # How much does concentration drop to qualify as a rim
 
 direction = 0 # 0=[100]*, 1=[010], 2=[001]
-points_in_calc = 200
+points_in_calc = 300
 
 ################## Set up and run calculation ################################
 fig, ax, v, x, y = diff.diffusion3Dnpi(lengths_microns, [-20.]*3, 

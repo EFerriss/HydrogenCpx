@@ -17,7 +17,7 @@ import json
 savefolder = '../../../CpxPaper/figures/'
 
 lengths_microns = [1000.] * 3
-logD_list = [-12.5, -12., -11.5, -11., -10.]
+logD_list = [-12.5, -12., -11.5, -11., -10.5, -10.]
 #logD_list = [-10.]
 
 time_minutes = [0.25, 0.5, 0.75] + list(np.arange(1, 11, 0.5)) + range(15, 65, 1) + range(65, 5*65, 5)
@@ -25,7 +25,7 @@ time_minutes = [0.25, 0.5, 0.75] + list(np.arange(1, 11, 0.5)) + range(15, 65, 1
 water_fraction = 0.90 # How much does concentration drop to qualify as a rim
 
 direction = 0 # 0=[100]*, 1=[010], 2=[001]
-points_in_calc = 200
+points_in_calc = 30
 
 ################## Set up and run calculation ################################
 v_sat = np.sum(np.ones([points_in_calc, points_in_calc, points_in_calc]))

@@ -24,7 +24,7 @@ time_minutes = [0.25, 0.5, 0.75] + list(np.arange(1, 11, 0.5)) + range(15, 65, 1
 water_fraction = 0.80 # How much does concentration drop to qualify as a rim
 
 direction = 0 # 0=[100]*, 1=[010], 2=[001]
-points_in_calc = 50
+points_in_calc = 300
 
 ################## Set up and run calculation ################################
 v_sat = np.sum(np.ones([points_in_calc, points_in_calc, points_in_calc]))
