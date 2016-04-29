@@ -7,7 +7,6 @@ import cpx_spectra
 import numpy as np
 import matplotlib.pyplot as plt
 import pynams.diffusivity_library as dlib
-import pynams.styles as styles
 
 #%% Import the data 
 reload(cpx_spectra)
@@ -78,7 +77,7 @@ peaklabels = ['bulk H', '3645\ncm$^{-1}$', '3617\ncm$^{-1}$',
               '3540\ncm$^{-1}$',
 #              '~3450\ncm$^{-1}$', 
               '3443\ncm$^{-1}$', 
-              '3350\ncm$^{-1}$']
+              '3355\ncm$^{-1}$']
 x_peaklabels = np.arange(0.5, 100.5, 2)
 for k in range(len(peaklabels)):
     ax.text(x_peaklabels[k], -8.7, peaklabels[k], ha='center',

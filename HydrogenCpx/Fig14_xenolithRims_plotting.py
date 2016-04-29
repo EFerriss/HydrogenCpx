@@ -98,11 +98,9 @@ for idx, ax in enumerate([ax1mm, ax3mm]):
     ax.set_ylim(500., 0)
     ax.set_xlim(0, 60.)
 
-#colors = ['black', 'blue', 'green', 'darkgoldenrod', 'red', 'teal', ]
-#fillcolors = ['grey', 'blue', 'green', 'darkgoldenrod', 'red', 'teal', 'yellow']
 colors = ['k']*6
-fillcolors = ['w', 'w', 'w', 'w', 'w', 'cornflowerblue']
-hatches = ['/', '/', '/', '/',  '/', None,  None]
+fillcolors = ['w', 'w', 'w', 'w', 'cornflowerblue', 'w']
+hatches = ['/']*6
 green_alpha = 0.45
 
 # 1mm cube
@@ -121,11 +119,23 @@ for main_idx in [0, 1]:
     for idx in xrange(0, 6):
         ax1mm.fill_between(time_minutes[main_idx][idx], distances[0][idx], 
                            distances[1][idx],facecolor=fillcolors[idx], 
-                           alpha=1., interpolate=True,
+                           alpha=0.3, interpolate=True,
                            hatch=hatches[idx])
     
 ax1mm.fill_between(time_minutes[0][0], distances[0][1], distances[1][2],
                    facecolor='green', 
+                   alpha=green_alpha, interpolate=True, )
+
+
+# I'm interpolating the values at the top of 10-5 band 
+# because that array is a different length
+x = time_minutes[0][4]
+y = distances[1][4]
+xvals = time_minutes[0][0]
+yinterp = np.interp(xvals, x, y)
+
+ax1mm.fill_between(time_minutes[0][0], yinterp, distances[1][5],
+                   facecolor='cornflowerblue', linewidth=0.,
                    alpha=green_alpha, interpolate=True, )
 
 # 3mm cube
@@ -143,12 +153,21 @@ for main_idx in [2, 3]:
 for idx in xrange(0, 6):
     ax3mm.fill_between(time_minutes[main_idx][idx], distances[2][idx], 
                        distances[3][idx],facecolor=fillcolors[idx], 
-                       alpha=1., interpolate=True,
+                       alpha=green_alpha, interpolate=True,
                        hatch=hatches[idx])
 
 ax3mm.fill_between(time_minutes[2][0], distances[2][1], distances[3][2],
                    facecolor='green', 
                    alpha=green_alpha, interpolate=True, )
+
+#x = time_minutes[2][4]
+#y = distances[2][4]
+#xvals = time_minutes[0][0]
+#yinterp = np.interp(xvals, x, y)
+ax3mm.fill_between(time_minutes[2][0], distances[3][4], distances[3][5],
+                   facecolor='cornflowerblue', 
+                   alpha=green_alpha, interpolate=True, )
+
 
 for idx, ax in enumerate([ax1mm, ax3mm]):
     ax.axhspan(0, resolution_microns, facecolor='red', alpha=0.2)

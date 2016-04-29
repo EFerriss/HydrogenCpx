@@ -20,7 +20,7 @@ from lmfit import minimize
 ### Saved preferred initial values (i), diffusivities (D), and errors (e) 
 ### for Kunlun diopside K3, K4 at 91 hours of heating (K91) and 154 hours
 ### of heating (K154), K5, and Jaipur diopside J1 (J)
-### In peak wavenumber order: 3645, 3617, 3540, 3443, 3350, BULK H #####
+### In peak wavenumber order: 3645, 3617, 3540, 3443, 3355, BULK H #####
 ### The same numbers are used in Fig. 7
 ### The data and marker styles are set in cpx_spectra.py
 i_K3 = cpx_spectra.i_K3
@@ -140,7 +140,7 @@ style_peak4 = {'marker' : '|', 'fillstyle' : 'none', 'linestyle' : 'none',
 
 style_peak5 = {'marker' : 'd', 'fillstyle' : 'full', 'linestyle' : 'none',
               'color' : 'k', 'markersize' : 6, 'markerfacecolor' : 'violet',
-              'alpha' : 0.5, 'label' : '3350 cm$^{-1}$'}
+              'alpha' : 0.5, 'label' : '3355 cm$^{-1}$'}
 
 
 style_init_K3 =  {'marker' : 'o', 'markeredgecolor' : 'r', 'linestyle' : 'none',
@@ -226,7 +226,7 @@ def get_best_initialD(fname, peak_idx):
         print fname_list
         return False, False
     fi = '../../../CpxPaper/figures/sensitivity_'
-    peak_label_list = ['3645', '3617', '3540', '3460', '3443', '3350']
+    peak_label_list = ['3645', '3617', '3540', '3460', '3443', '3355']
     filename = ''.join((fi, fname, '_', peak_label_list[peak_idx], '.txt'))
     f = open(filename, 'r')
     x = json.load(f)
@@ -395,7 +395,7 @@ def plotpeaks(wb_list, wbs_list, ilist, dlist, elist, dlist_slow=None,
             axes[18].set_ylabel(''.join(('3443\ncm$^{-1}$\n\nlog$_{10}$D', subscript, '\n',
                                 formatter.format(peak_D[4]), '\n+/-', str(er[4]))),
                                 rotation=0, ha=ylabelloc, va='center')
-            axes[19].set_ylabel(''.join(('3350\ncm$^{-1}$\n\nlog$_{10}$D', subscript, '\n',
+            axes[19].set_ylabel(''.join(('3355\ncm$^{-1}$\n\nlog$_{10}$D', subscript, '\n',
                                 formatter.format(peak_D[5]), '\n+/-', str(er[5]))),
                                 rotation=0, ha=ylabelloc, va='center')
 
@@ -568,7 +568,7 @@ fig, axes = figOutline(nrow=5, ncol=3, figsize=(6.5, 7.5), tit=tit)
 plotpeaks(wb_list=[wb]*5, wbs_list=[wbs]*5, ilist=iareas, dlist=peak_D,
           elist=er, sidelabels=False)
 
-peak_idx_list = ['3645', '3617', '3540', '3443', '3350']
+peak_idx_list = ['3645', '3617', '3540', '3443', '3355']
 facecolors = ['wheat', 'thistle']
 alphas = [0.4, 0.4]
 xtext = 1.2
@@ -758,7 +758,7 @@ plotpeaks(wb_list=wb_list, wbs_list=wbs_list, ilist=iareas, dlist=Dxz,
           show_legend=False, sidelabels=False,
           wholeblock=True, peak_idx_list=[None]*5, ytickgrid=[0.5]*5)
 
-peak_idx_list = ['3645', '3617', '3540', '3443', '3350']
+peak_idx_list = ['3645', '3617', '3540', '3443', '3355']
 facecolors = ['wheat', 'thistle']
 alphas = [0.4, 0.4]
 xtext = 1.25

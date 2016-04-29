@@ -71,10 +71,12 @@ for idx, percentRemaining in enumerate(data3mm[1:-1]):
 # make cpx estimated range green
 ax1mm.fill_between(time_hours, data[2], data[3],facecolor='green', 
                    alpha=0.5, interpolate=True, )
-
 ax3mm.fill_between(time_hours3mm, data3mm[2], data3mm[3],facecolor='green', 
                    alpha=0.5, interpolate=True, )
 
+# make olivine blue
+ax1mm.fill_between(time_hours, data[5], data[6], facecolor='cornflowerblue')
+ax3mm.fill_between(time_hours3mm, data3mm[5], data3mm[6], facecolor='cornflowerblue')
 
 ylab = 'Extent of "water"\nre-equilibration with surroundings (%)'
 ax1mm.set_ylabel(ylab)

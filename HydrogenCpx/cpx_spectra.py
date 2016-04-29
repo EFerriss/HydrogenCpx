@@ -720,7 +720,7 @@ K6_dc_Ea_2 = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[2],
 ave_K6_Ea = nams.Spectrum(sample=K6, fname = 'ave_K6_Ea',
                           other_name = 'Average of 4 initial K6 spectra, E || a',
                           polar = 'E || a', folder=folder)
-ave_K6_Ea.make_average_spectra([K6_db_Ea, K6_db_Ea_2, K6_dc_Ea, K6_dc_Ea_2])
+ave_K6_Ea.make_average_spectra([K6_db_Ea, K6_db_Ea_2, K6_dc_Ea, K6_dc_Ea_2],)
 
 # E || b = mean absorbance of 2 spectra
 K6_dc_Eb = nams.Spectrum(sample=K6, thick_microns=K6.sample_thick_microns[2],
@@ -885,7 +885,7 @@ PMR_unpol = nams.TimeSeries(fname_list=['P_0_unpol', 'P_1_unpol', 'P_2_unpol',
 ### Saved preferred initial values (i), diffusivities (D), and errors (e) 
 ### for Kunlun diopside K3, K4 at 91 hours of heating (K91) and 154 hours
 ### of heating (K154), K5, and Jaipur diopside J1 (J)
-### In peak wavenumber order: 3645, 3617, 3540, 3443, 3350, BULK H #####
+### In peak wavenumber order: 3645, 3617, 3540, 3443, 3350-->3355, BULK H #####
 
 i_K3 = [12., 25., 23.3, 23., 10., 1.24]
 D_K3 = [-13.9, -13.4, -13., -13.7, -13.5, -13.6]
@@ -936,10 +936,10 @@ K_3443 = diffusion.Diffusivities(description='3443 cm$^{-1}$',
                                  logD_all_error=K_elist[:, 3],  
                                  color='blue', marker='3', mew=2, markersize=10, 
                                  celsius_all=K_celsius)
-K_3350 = diffusion.Diffusivities(description='3350 cm$^{-1}$', 
+K_3350 = diffusion.Diffusivities(description='3355 cm$^{-1}$', 
                                  logD_all=K_dlist[:, 4], 
-                                 logD_all_error=K_elist[:, 4],  
-                                 color='indigo', marker='d', markersize=8, alpha=0.5, 
+                                 logD_all_error=K_elist[:, 4], alpha=0.5, 
+                                 color='indigo', marker='d', markersize=8, 
                                  celsius_all=K_celsius)
 
 J_bulk = nams.diffusion.Diffusivities(description = 'Jaipur bulk H (this work)',

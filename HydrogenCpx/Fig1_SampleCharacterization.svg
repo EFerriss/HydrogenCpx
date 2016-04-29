@@ -4734,7 +4734,7 @@
        height="574.09827"
        width="613.81781"
        id="rect16736"
-       style="fill:none;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       style="fill:none;stroke:#e80000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     <text
        sodipodi:linespacing="125%"
        id="text21678"
@@ -5004,13 +5004,13 @@
        id="path3855-1"
        inkscape:connector-curvature="0" />
     <rect
-       style="fill:none;stroke:#ee0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:none;stroke:#d50000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
        id="rect3875"
        width="616.46002"
        height="572.92456"
        x="75.209427"
        y="42.817421"
-       inkscape:export-filename="C:\Users\Ferriss\Documents\CpxPaper\Fig1.png"
+       inkscape:export-filename="C:\Users\Ferriss\Documents\Code\Python\HydrogenCpx\HydrogenCpx\Fig1.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
   </g>

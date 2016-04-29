@@ -55,7 +55,7 @@ def make_water_estimates():
     Jaipur_water = nams.area2water(Jaipur_area_total, phase='cpx', calibration='Bell')
     PMR_water = nams.area2water(PMR_area_total, phase='cpx', calibration='Bell')
     
-    return Kunlun_water, Jaipur_water, PMR_water
+    return Kunlun_water.n, Jaipur_water.n, PMR_water.n
 
 # First make 3 baselines for each spectrum
 # the wavenumber ranges remain constant throughout
@@ -96,10 +96,18 @@ for idx, spec in enumerate(spec_list):
                                          shiftline=shift_list_high[idx]))
 water_estimates.append(make_water_estimates())
 
-# Get mean and standard deviation, propogating uncertainties from calibration
-K_water = np.mean(np.array(water_estimates)[:, 0])
-J2_water = np.mean(np.array(water_estimates)[:, 1])
-PMR_water = np.mean(np.array(water_estimates)[:, 2])
+# Get mean and standard deviation for each
+K_water_n = np.mean(np.array(water_estimates)[:, 0])
+J2_water_n = np.mean(np.array(water_estimates)[:, 1])
+PMR_water_n = np.mean(np.array(water_estimates)[:, 2])
+
+K_water_s = np.std(np.array(water_estimates)[:, 0])
+J2_water_s = np.std(np.array(water_estimates)[:, 1])
+PMR_water_s = np.std(np.array(water_estimates)[:, 2])
+
+K_water = ufloat(K_water_n, K_water_s)
+J2_water = ufloat(J2_water_n, J2_water_s)
+PMR_water = ufloat(PMR_water_n, PMR_water_s)
 
 ### Figure showing 3 baselines
 ax = nams.plotsetup_3x3(yhi=1.5)
@@ -118,13 +126,13 @@ abs_shift = 0.15 # how much to shift spectra so baselines are clear
 
 for k, spec in enumerate(spec_list):
     if k > 5: # PMR
-        ax[k].plot(spec.wn, spec.abs_cm / PMRfac + abs_shift, 
+        ax[k].plot(spec.wn_full, spec.abs_full_cm / PMRfac + abs_shift, 
                    **styles.style_spectrum)
         for x in xrange(3): # loop through each baseline
             ax[k].plot(spec.base_wn, spec.bline[x]/PMRfac + abs_shift,
                         **styles.style_baseline)
     else:
-        ax[k].plot(spec.wn, spec.abs_cm + abs_shift,
+        ax[k].plot(spec.wn_full, spec.abs_full_cm + abs_shift,
                    **styles.style_spectrum)
         for x in xrange(3):
             ax[k].plot(spec.base_wn, spec.bline[x] + abs_shift, 
@@ -140,9 +148,6 @@ ax[3].set_ylabel('absorbance (cm$^{-1}$)\n' +
 ax[6].set_ylabel('augite PMR-53 / %i\n%s ppm H$_2$O' % 
                   (PMRfac, numformat.format(PMR_water)))
 
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2.eps', 
-#            format='eps', dpi=1000)
-#plt.savefig('C:\\Users\\Ferriss\\Documents\\CpxPaper\\Fig2', dpi=300)
 plt.savefig('Fig2.png', format='png', dpi=300)
 plt.savefig('Fig2.eps', format='eps')
 
@@ -341,7 +346,7 @@ print_peak_water(spec = PMR_list[0],
                  arealist=PMR_peak_areas, water=PMR_water)
 
 # save to .CSV
-savefile = 'Table4_cpx_peakfit_intial.CSV'
+savefile = 'Table3_cpx_peakfit_intial.CSV'
 with open(savefile, 'wb') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
     

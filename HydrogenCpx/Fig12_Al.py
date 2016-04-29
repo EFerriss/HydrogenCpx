@@ -96,12 +96,23 @@ Names = ['Jaipur diopside\n(|| a, c*)',
          'Jaipur diopside\n(|| b)',
          ]
 
+# original convention from normalization spreadsheet from SERC website
+# http://serc.carleton.edu/research_education/equilibria/mineralformulaerecalculation.html
 Al = np.array([
-               0.016,
-               0.204,
-               0.026,
-               0.133,
-               0.016,])
+               0.016, # Jaipur
+               0.204, # Nushan
+               0.026, # PMR-53
+               0.133, # Fuego
+               0.016,]) # Jaipur 
+
+# Convention from O'Leary et al. 2010 where IV-Al = 0.5*(total Al - Na)
+Al = np.array([
+                0.0,    # Jaipur
+                0.154,  # Nushan
+                0.0,     # PMR-53
+                0.066,  # Fuego
+                0.0     # Jaipur
+                ])
 
 bulk = np.array([Jaipur.whatIsD(Celsius, orient=direction), 
                  Nushan.whatIsD(Celsius, orient=direction),
@@ -111,19 +122,21 @@ bulk = np.array([Jaipur.whatIsD(Celsius, orient=direction),
                  ])
 
 # Jaipur diopside fast direction
-ax.plot(np.log10(0.016), Jaipur.whatIsD(Celsius, orient='x'), **Jaipur.basestyle)
-ax.text(-1.55, -10.8, 'Jaipur diopside\nfast direction', ha='center')
+#ax.plot(np.log10(0.016), Jaipur.whatIsD(Celsius, orient='x'), **Jaipur.basestyle)
+#ax.text(-1.55, -10.8, 'Jaipur diopside\nfast direction', ha='center')
 
 # augite PMR-53
-ax.plot(np.log10(0.026), -11.02, **PMR.basestyle)
-ax.text(-1.75, -11.3, 'augite\nPMR-53',)
+#ax.plot(np.log10(0.026), -11.02, **PMR.basestyle)
+#ax.text(-1.75, -11.3, 'augite\nPMR-53',)
 
 # Nushan cpx
-ax.plot(np.log10(0.204), Nushan.whatIsD(Celsius, orient='z'), **Nushan.basestyle)
+#ax.plot(np.log10(0.204), Nushan.whatIsD(Celsius, orient='z'), **Nushan.basestyle)
+ax.plot(np.log10(0.154), Nushan.whatIsD(Celsius, orient='z'), **Nushan.basestyle)
 ax.text(-0.7, -12.35, unicode('N\374shan\ncpx', 'latin-1'), ha='center')
 
 # Fuego cpx
-FuegoLoc = (np.log10(0.133), (Jaipur.whatIsD(Celsius, orient='x')+Jaipur.whatIsD(Celsius, orient='y'))/2.)
+#FuegoLoc = (np.log10(0.133), (Jaipur.whatIsD(Celsius, orient='x')+Jaipur.whatIsD(Celsius, orient='y'))/2.)
+FuegoLoc = (np.log10(0.066), (Jaipur.whatIsD(Celsius, orient='x')+Jaipur.whatIsD(Celsius, orient='y'))/2.)
 ax.add_artist(Ellipse(FuegoLoc, 0.06, 1., facecolor='none', edgecolor='k'))
 ax.text(-0.95, -11.5, 'Fuego\nphenocryst', ha='right')
 
@@ -145,8 +158,9 @@ ax.text(xenoMin, xenoDmin, '~mantle\ncpx', ha='left', va='bottom',
 plt.subplots_adjust(right=0.95, left=0.26, bottom=0.0, top=0.9)
 fig.autofmt_xdate()
             
-plt.savefig('Fig12_Al.eps', format='eps', dpi=1000)
-fig.savefig('Fig12_Al.tif', format='tif', dpi=300)
+#plt.savefig('Fig12_Al.eps', format='eps', dpi=1000)
+#fig.savefig('Fig12_Al.tif', format='tif', dpi=300)
+fig.savefig('Fig12_Al_OLearyConvention.png', dpi=150)
 
 plt.show(fig)
 print 'Finished'
