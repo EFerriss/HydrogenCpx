@@ -20,11 +20,11 @@ folder = 'C:\\Users\\Ferriss\\Documents\\Code\\Python\\HydogenCpx\\FTIR_CSV_FILE
 # IGSN: International Geo Sample Number; http://www.geosamples.org/aboutigsn
 
 # Kunlun diopside
-K3 = nams.Sample(IGSN='IEFERKUN0')
-K4 = nams.Sample(IGSN='IEFERKUN0')
-K5 = nams.Sample(IGSN='IEFERKUN0')
-K5slice = nams.Sample(IGSN='IEFERKUN0')
-K6 = nams.Sample(IGSN='IEFERKUN0')
+K3 = nams.Sample(IGSN='IEFERKUN3')
+K4 = nams.Sample(IGSN='IEFERKUN4')
+K5 = nams.Sample(IGSN='IEFERKUN5')
+K5slice = nams.Sample(IGSN='IEFERK5SL')
+K6 = nams.Sample(IGSN='IEFERKUN6')
 
 # Jaipur diopside
 J1 = nams.Sample(IGSN='IEFERJAI1')

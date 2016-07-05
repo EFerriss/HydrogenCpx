@@ -8,6 +8,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pynams.diffusivity_library as dlib
 
+plt.style.use('paper')
+
 #%% Import the data 
 reload(cpx_spectra)
 
@@ -97,3 +99,4 @@ ax.text(6.5, Jstart + tgap, '${Jaipur}$', fontsize=16, ha='center', va='center')
       
 plt.savefig('Fig8_PeakComparison.eps', format='eps', dpi=1000)
 fig.savefig('Fig8_PeakComparison.tif', format='tif', dpi=300)
+fig.savefig('DiopsidePeakDiffusivityComparison.svg', format='svg')

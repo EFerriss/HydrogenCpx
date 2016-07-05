@@ -16,6 +16,8 @@ import cpx_spectra
 import pynams.diffusivity_library as dlib
 from mpl_toolkits.axes_grid1.parasite_axes import SubplotHost
 
+plt.style.use('paper')
+
 reload(cpx_spectra)
 
 # Bulk H data
@@ -210,7 +212,7 @@ ax_Fe.axis["top"].label.set_visible(True)
 ax_Fe.axis["right"].major_ticklabels.set_visible(False)
 
 
-ax.set_ylabel('log$_{10}$ diffusivity$_{H}$ $(m^{-2}/s)$ at 800 $\degree$C')
+ax.set_ylabel('log$_{10}$ diffusivity$_{H}$ $(m^2/s)$ at 800 $\degree$C')
 ax.set_xlabel('log$_{10}$ Fe (a.p.f.u.)')
 
 
@@ -296,6 +298,7 @@ ax.legend(loc=4, ncol=1, fontsize=10, fancybox=True)
 plt.tight_layout()
 plt.savefig('Fig10_Fe.eps', format='eps', dpi=1000)
 fig.savefig('Fig10_Fe.tif', format='tif', dpi=300)
+fig.savefig('CpxDiffusivities.svg', format='svg')
 
 plt.show(fig)
 print 'Finished'

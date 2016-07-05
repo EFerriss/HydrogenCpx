@@ -85,7 +85,7 @@ ax_Al.set_xticklabels(Al_labels)
 ax_Al.axis["top"].set_label("IV-Al (a.p.f.u.)")
 ax_Al.axis["top"].label.set_visible(True)
 ax_Al.axis["right"].major_ticklabels.set_visible(False)
-ax.set_ylabel('log$_{10}$ diffusivity$_{H}$ $(m^{-2}/s)$ at 800 $\degree$C')
+ax.set_ylabel('log$_{10}$ diffusivity$_{H}$ $(m^2/s)$ at 800 $\degree$C')
 ax.set_xlabel('log$_{10}$ IV-Al (a.p.f.u.)')
 ax.set_xlim(-2.0, -0.4) 
 
