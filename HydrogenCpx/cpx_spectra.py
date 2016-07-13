@@ -12,9 +12,10 @@ in revision as of March 2016
 from pynams import pynams as nams
 from pynams import diffusion
 import numpy as np
+reload(nams)
 
 # Set folder on your computer where to find .CSV FTIR spectra files 
-folder = 'C:\\Users\\Ferriss\\Documents\\Code\\Python\\HydogenCpx\\FTIR_CSV_FILES\\'
+folder = 'C:\\Users\\Ferriss\\Documents\\Code\\Python\\HydrogenCpx\\FTIR_CSV_FILES\\'
 
 #%% SAMPLES
 # IGSN: International Geo Sample Number; http://www.geosamples.org/aboutigsn
@@ -75,8 +76,10 @@ PMR.thickness_microns = np.mean([885., 867., 873., 878., 879.])
 
 #%% K3 Kunlun diopside initial spectra
 ### unpolarized down three different ray paths
+
+
 leng = np.mean(K3.twoA_list)
-profile_K3_trueInit_raypathA = nams.Profile(sample=K3, 
+profile_K3_trueInit_raypathA = nams.Profile(sample=K3, folder=folder,
                                             profile_name = 'K3 initial R || a*',
                                             direction = 'a', raypath = 'b',
                                             fname_list = ['K3_sp13_Bda', 
@@ -84,8 +87,9 @@ profile_K3_trueInit_raypathA = nams.Profile(sample=K3,
                                             positions_microns = [leng/2., 
                                                                  leng/2.])
 
+#%%
 leng = np.mean(K3.twoB_list)
-profile_K3_trueInit_raypathB = nams.Profile(sample = K3, 
+profile_K3_trueInit_raypathB = nams.Profile(sample = K3, folder=folder,
                                             profile_name = 'K3 initial R || b',
                                             direction = 'b', raypath = 'c',
                                             fname_list = ['K3_sp1_Adb', 
