@@ -6,8 +6,10 @@ Created on Mon Jan 12 14:20:16 2015
 
 Position data, sample data, FTIR spectra profiles and groups of profiles, 
 and estimated diffusivities for hydrogen in clinopyroxene. 
-See Ferriss et al. manuscript in Contributions to Mineralogy and Petrology 
-in revision as of March 2016
+Ferriss et al. (2016) Contributions to Mineralogy and Petrology 
+https://link.springer.com/article/10.1007/s00410-016-1262-8
+
+Note this script uses pynams v0.1.0, which has since been updated for clarity.
 """
 from pynams import pynams as nams
 from pynams import diffusion
@@ -17,7 +19,7 @@ reload(nams)
 # Set folder on your computer where to find .CSV FTIR spectra files 
 folder = 'C:\\Users\\Ferriss\\Documents\\Code\\Python\\HydrogenCpx\\FTIR_CSV_FILES\\'
 
-#%% SAMPLES
+## SAMPLES
 # IGSN: International Geo Sample Number; http://www.geosamples.org/aboutigsn
 
 # Kunlun diopside
@@ -87,7 +89,6 @@ profile_K3_trueInit_raypathA = nams.Profile(sample=K3, folder=folder,
                                             positions_microns = [leng/2., 
                                                                  leng/2.])
 
-#%%
 leng = np.mean(K3.twoB_list)
 profile_K3_trueInit_raypathB = nams.Profile(sample = K3, folder=folder,
                                             profile_name = 'K3 initial R || b',
@@ -407,7 +408,7 @@ K4wb_quench = nams.WholeBlock(name = '0-time (37m at 480C) profiles at 904 C for
                               time_seconds = 30.,
                               worksheetname = 'Kunlun 904C 0-time')
 
-#%%## K4 heated 1 hour at 904C, K4*H
+%# K4 heated 1 hour at 904C, K4*H
 leng = np.mean(K4.twoA_list)
 profile_K4_904C_1hr_A = nams.Profile(sample = K4, direction = 'a', raypath = 'c',
                                      profile_name = 'Kunlun heated 1 hr at 904 C || a',
@@ -958,197 +959,3 @@ J_bulk = nams.diffusion.Diffusivities(description = 'Jaipur bulk H (this work)',
 # augite PMR diffusivities see Fig9_augitePMR.py
 D_PMR = nams.diffusion.Diffusivities(celsius_all = [800.],
                                      logD_unoriented = [-11.])
-
-
-#%%
-### cpx paper initial concentrations for Kunlun, Jaipur, and PMR-53
-### See Fig1_Fig2_Fig3_Table1_CpxComparison.py
-#K_water_known = nams.ufloat(27.1, 0.7)
-#J_water_known = nams.ufloat(53.4, 1.4)
-#PMR_water_known = nams.ufloat(268, 8) # from Bell et al. 2004 manometry
-#
-## peak-specific water content 
-#K_water_peaks = K_water_known * K_init_peak_fraction
-#J_water_peaks = J_water_known * J_init_peak_fraction
-
-
-##############################################################################
-##%% Groups of whole-blocks with the same diffusivties
-#heights_instead = False
-#
-#D_PMR = nams.diffusion.Diffusivities()
-#D_PMR.description = 'augite PMR-53 bulk H'
-#D_PMR.celsius_all = [800.]
-#D_PMR.logD_unoriented = [-11.]
-#D_PMR.basestyle = {'color' : 'orange', 'marker' : 'D', 
-#                   'markersize' :  14, 'markeredgewidth' : 0,
-#                   'linestyle' : 'none', 'alpha' : 1.}
-#
-#
-#
-##D_Kunlun_peak0 = nams.diffusion.Diffusivities()
-##D_Kunlun_peak0.description = 'Kunlun 3645 cm$^{-1}$'
-##D_Kunlun_peak0.wholeblocks = [K3wb_6days, K4wb_91hr, K4wb_154hr, K5wb_75hr]
-###D_Kunlun_peak0.wholeblocks = [K4wb_154hr]
-##D_Kunlun_peak0.basestyle = {'color' : 'peachpuff', 'marker' : 'o', 
-##                            'markersize' :  10, 'markeredgewidth' : 0.5,
-##                            'linestyle' : 'none', 'alpha' : 1,}
-##D_Kunlun_peak0.get_from_wholeblock(peak_idx=0,
-##                                   heights_instead=heights_instead)
-##
-##D_Kunlun_peak1 = nams.diffusion.Diffusivities()
-##D_Kunlun_peak1.description = 'Kunlun 3617 cm$^{-1}$'
-##D_Kunlun_peak1.wholeblocks = [K3wb_6days, K4wb_91hr, K4wb_154hr, K5wb_75hr]
-##D_Kunlun_peak1.basestyle = {'color' : 'lightsalmon', 'marker' : '^', 
-##                            'markersize' : 10, 'markeredgewidth' : 1.,
-##                            'linestyle' : 'none', 'alpha' : 0.5,}
-##D_Kunlun_peak1.get_from_wholeblock(peak_idx=1,
-##                                   heights_instead=heights_instead)
-##
-##D_Kunlun_peak2 = nams.diffusion.Diffusivities()
-##D_Kunlun_peak2.description = 'Kunlun 3540 cm$^{-1}$'
-##D_Kunlun_peak2.wholeblocks = [K3wb_6days, K4wb_91hr, K4wb_154hr, K5wb_75hr]
-##D_Kunlun_peak2.basestyle = {'color' : 'magenta', 'marker' : 'd', 
-##                            'markersize' :  10, 'markeredgewidth' : 0,
-##                            'linestyle' : 'none', 'alpha' : 1}
-##D_Kunlun_peak2.get_from_wholeblock(peak_idx=2,
-##                                   heights_instead=heights_instead)
-##
-##D_Kunlun_peak4 = nams.diffusion.Diffusivities()
-##D_Kunlun_peak4.description = 'Kunlun 3443 cm$^{-1}$'
-##D_Kunlun_peak4.wholeblocks = [K3wb_6days, K4wb_91hr, K4wb_154hr, K5wb_75hr]
-##D_Kunlun_peak4.basestyle = {'color' : 'mistyrose', 'marker' : '*', 
-##                            'markersize' :  17, 'markeredgewidth' : 1,
-##                            'markeredgecolor' : 'black',
-##                            'linestyle' : 'none', 'alpha' : 0.5}
-##D_Kunlun_peak4.get_from_wholeblock(peak_idx=4,
-##                                   heights_instead=heights_instead)
-##
-##D_Kunlun_peak5 = nams.diffusion.Diffusivities()
-##D_Kunlun_peak5.description = 'Kunlun 3355 cm$^{-1}$'
-##D_Kunlun_peak5.wholeblocks = [K3wb_6days, K4wb_154hr, K5wb_75hr]
-###D_Kunlun_peak5.wholeblocks = [K4wb_154hr]
-##D_Kunlun_peak5.basestyle = {'color' : 'darksalmon', 'marker' : 'p', 
-##                            'markersize' :  12, 'markeredgewidth' : 1,
-##                            'markeredgecolor' : 'black',
-##                            'linestyle' : 'none', 'alpha' : 0.5}
-##D_Kunlun_peak5.get_from_wholeblock(peak_idx=5,
-##                                   heights_instead=heights_instead)
-##
-##### Jaipur
-##D_Jaipur_bulkH = nams.diffusion.Diffusivities()
-##D_Jaipur_bulkH.description = 'Jaipur bulk H (this work)'
-##D_Jaipur_bulkH.wholeblocks = [J1wb]
-##D_Jaipur_bulkH.basestyle = {'color' : 'k', 'marker' : 's', 
-##                            'markerfacecolor' : 'turquoise',
-##                            'markersize' :  10, 
-##                            'linestyle' : 'none', 'alpha' : 1.,
-##                            'markeredgewidth' : 2}
-##D_Jaipur_bulkH.get_from_wholeblock(wholeblock=True, 
-##                                   heights_instead=heights_instead)
-##D_Jaipur_bulkH.logDx = [-9.9]
-##D_Jaipur_bulkH.logDy = [-10.9]
-##D_Jaipur_bulkH.logDz = [-9.9]
-##
-##D_Jaipur_peak0 = nams.diffusion.Diffusivities()
-##D_Jaipur_peak0.description = 'Jaipur 3645 cm-1'
-##D_Jaipur_peak0.wholeblocks = [J1wb]
-##D_Jaipur_peak0.basestyle = {'color' : 'purple', 'marker' : 'o', 
-##                            'markersize' :  10, 'linewidth' : 1,
-##                            'linestyle' : 'none', 'alpha' : 0.5,
-##                            'markeredgewidth' : 2}
-##D_Jaipur_peak0.get_from_wholeblock(peak_idx=0, wholeblock=True, 
-##                                   heights_instead=heights_instead)
-##
-##D_Jaipur_peak1 = nams.diffusion.Diffusivities()
-##D_Jaipur_peak1.description = 'Jaipur 3617 cm-1'
-##D_Jaipur_peak1.wholeblocks = [J1wb]
-##D_Jaipur_peak1.basestyle = {'color' : 'blue', 'marker' : '^', 
-##                            'markersize' : 10, 
-##                            'linestyle' : 'none', 'alpha' : 0.5,
-##                            'markeredgewidth' : 2}
-##D_Jaipur_peak1.get_from_wholeblock(peak_idx=1,
-##                                   heights_instead=heights_instead)
-##
-##D_Jaipur_peak2 = nams.diffusion.Diffusivities()
-##D_Jaipur_peak2.description = 'Jaipur 3540 cm-1'
-##D_Jaipur_peak2.wholeblocks = [J1wb]
-##D_Jaipur_peak2.basestyle = {'color' : 'indigo', 'marker' : 'd', 
-##                            'markersize' :  10, 'markeredgewidth' : 2,
-##                            'linestyle' : 'none', 'alpha' : 0.5,}
-##D_Jaipur_peak2.get_from_wholeblock(peak_idx=2,
-##                                   heights_instead=heights_instead)
-##
-##D_Jaipur_peak3 = nams.diffusion.Diffusivities()
-##D_Jaipur_peak3.description = 'Jaipur 3460 cm-1'
-##D_Jaipur_peak3.wholeblocks = [J1wb]
-##D_Jaipur_peak3.basestyle = {'color' : 'blue', 'marker' : '*', 
-##                            'markersize' :  12, 'markeredgewidth' : 2,
-##                            'markeredgecolor' : 'black',
-##                            'linestyle' : 'none', 'alpha' : 0.5,}
-##D_Jaipur_peak3.get_from_wholeblock(peak_idx=3,
-##                                   heights_instead=heights_instead)
-##
-##D_Jaipur_peak4 = nams.diffusion.Diffusivities()
-##D_Jaipur_peak4.description = 'Jaipur 3443 cm-1'
-##D_Jaipur_peak4.wholeblocks = [J1wb]
-##D_Jaipur_peak4.basestyle = {'color' : 'teal', 'marker' : '*', 
-##                            'markersize' :  12, 'markeredgewidth' : 1,
-##                            'markeredgecolor' : 'black',
-##                            'linestyle' : 'none', 'alpha' : 0.5,}
-##D_Jaipur_peak4.get_from_wholeblock(peak_idx=4,
-##                                   heights_instead=heights_instead)
-##
-##D_Jaipur_peak5 = nams.diffusion.Diffusivities()
-##D_Jaipur_peak5.description = 'Jaipur 3355 cm-1'
-##D_Jaipur_peak5.wholeblocks = [J1wb]
-##D_Jaipur_peak5.basestyle = {'color' : 'green', 'marker' : 'p', 
-##                            'markersize' :  10, 'markeredgewidth' : 2,
-##                            'markeredgecolor' : 'black',
-##                            'linestyle' : 'none', 'alpha' : 0.5,}
-##D_Jaipur_peak5.get_from_wholeblock(peak_idx=5,
-##                                   heights_instead=heights_instead)
-##
-###H_diopside_difference = nams.diffusion.Diffusivities()
-###H_diopside_difference.description = 'bulk Jaipur - bulk Kunlun'
-###H_diopside_difference.celsius_x = D_Jaipur_bulkH.celsius_all * 2
-###a = 10.**(np.array(D_Jaipur_bulkH.logDx*2))
-###b = 10.**(np.array(D_Kunlun_bulkH.logDx[1:3]))
-###H_diopside_difference.logDx
-##
-#
-##
-### peak distributions in the following order:
-### In order: 3645, 3617, 3540, 3443, 3350 ###
-### leaving out 3460 cm-1
-##K_init_peak_fraction = np.array([0.12, 0.32, 0.18, 0.19, 0.19])
-##J_init_peak_fraction = np.array([0.06, 0.09, 0.13, 0.34, 0.38])
-##
-
-##K_bulk_D = np.ones(4)
-##K_3645_D = np.ones(4)
-##K_3617_D = np.ones(4)
-##K_3540_D = np.ones(4)
-##K_3443_D = np.ones(4)
-##K_3350_D = np.ones(4)
-##K_bulk_e = np.ones(4)
-##K_3645_e = np.ones(4)
-##K_3617_e = np.ones(4)
-##K_3540_e = np.ones(4)
-##K_3443_e = np.ones(4)
-##K_3350_e = np.ones(4)
-##
-##
-##for idx in range(4):
-##    K_bulk_D[idx] = K_dlist[idx][-1]
-##    K_3645_D[idx] = K_dlist[idx][0]
-##    K_3617_D[idx] = K_dlist[idx][1]
-##    K_3540_D[idx] = K_dlist[idx][2]
-##    K_3443_D[idx] = K_dlist[idx][3]
-##    K_3350_D[idx] = K_dlist[idx][4]
-##    K_bulk_e[idx] = K_elist[idx][-1]
-##    K_3645_e[idx] = K_elist[idx][0]
-##    K_3617_e[idx] = K_elist[idx][1]
-##    K_3540_e[idx] = K_elist[idx][2]
-##    K_3443_e[idx] = K_elist[idx][3]
-##    K_3350_e[idx] = K_elist[idx][4]
